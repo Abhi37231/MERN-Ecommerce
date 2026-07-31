@@ -1,0 +1,2471 @@
+next is not a function
+next is not a function
+next is not a function
+next is not a function
+next is not a function
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: POST /api/v1/auth/refresh-token
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: POST /api/v1/auth/refresh-token'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: POST /api/v1/auth/refresh-token
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: POST /api/v1/auth/refresh-token'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+undefined
+
+TYPE: object
+INSPECT: {
+  message: 'Unknown API key your_cloudinary_api_key',
+  name: 'Error',
+  http_code: 401,
+  storageErrors: [],
+  statusCode: 500,
+  status: 'error'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: POST /api/v1/auth/refresh-token
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: POST /api/v1/auth/refresh-token'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: POST /api/v1/auth/refresh-token
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: POST /api/v1/auth/refresh-token'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+ValidationError: Product validation failed: description: Product description is required
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Product description is required
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Product description is required
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+ValidationError: Product validation failed: description: Product description is required
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Product description is required
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Product description is required
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:158:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:158:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.Query.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\User.js:159:3)
+    at Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:59:39)
+    at _executePreHooks (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4871:33)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4800:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 4 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 4 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: shopsphere.products index: sku_1 dup key: { sku: "" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\productController.js:254:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "" already exists for "sku".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:74:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+ValidationError: Address validation failed: pincode: Pincode is required, addressLine1: Address line 1 is required
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\userController.js:101:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Pincode is required. Address line 1 is required
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Pincode is required. Address line 1 is required
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 1 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 1 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 1 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 1 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+ValidationError: Address validation failed: pincode: Pincode is required, addressLine1: Address line 1 is required
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\userController.js:101:19
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Pincode is required. Address line 1 is required
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Pincode is required. Address line 1 is required
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+Error: Product is out of stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:56:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Product is out of stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Cannot update status of a cancelled order.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:187:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Cannot update status of a cancelled order.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Cannot update status of a cancelled order.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:187:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Cannot update status of a cancelled order.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Cannot update status of a cancelled order.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:187:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Cannot update status of a cancelled order.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Cannot update status of a cancelled order.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:187:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Cannot update status of a cancelled order.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 1 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 1 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 1 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 1 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Cannot update status of a cancelled order.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:187:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Cannot update status of a cancelled order.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Cannot update status of a cancelled order.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:187:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Cannot update status of a cancelled order.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Refresh token required
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:134:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Refresh token required'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Refresh token required
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:134:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Refresh token required'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Invalid or expired coupon code.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:177:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Invalid or expired coupon code.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Invalid email or password
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:96:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Invalid email or password'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+    at SchemaObjectId.cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schemaType.js:1374:12)
+    at SchemaType.castForQuery (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schemaType.js:1794:17)
+    at cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:5233:12)
+    at Query._castConditions (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\reviewController.js:81:19
+
+TYPE: object
+INSPECT: AppError: Invalid _id: "undefined".
+    at handleCastErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:5:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:72:41)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Invalid _id: "undefined".
+    at handleCastErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:5:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:72:41)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+    at SchemaObjectId.cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schemaType.js:1374:12)
+    at SchemaType.castForQuery (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schemaType.js:1794:17)
+    at cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:5233:12)
+    at Query._castConditions (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\reviewController.js:81:19
+
+TYPE: object
+INSPECT: AppError: Invalid _id: "undefined".
+    at handleCastErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:5:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:72:41)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Invalid _id: "undefined".
+    at handleCastErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:5:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:72:41)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+    at SchemaObjectId.cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schemaType.js:1374:12)
+    at SchemaType.castForQuery (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\schemaType.js:1794:17)
+    at cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:5233:12)
+    at Query._castConditions (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\reviewController.js:81:19
+
+TYPE: object
+INSPECT: AppError: Invalid _id: "undefined".
+    at handleCastErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:5:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:72:41)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Invalid _id: "undefined".
+    at handleCastErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:5:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:72:41)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/v1/reviews
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:646:15
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:265:14)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/v1/reviews'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+ValidationError: Order validation failed: status: Invalid order status
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:331:3
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+ValidationError: Order validation failed: status: Invalid order status
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:331:3
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+ValidationError: Order validation failed: status: Invalid order status
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:331:3
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+ValidationError: Order validation failed: status: Invalid order status
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:331:3
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+ValidationError: Order validation failed: status: Invalid order status
+    at model.validate (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\document.js:2910:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:399:7)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:331:3
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: Invalid order status
+    at handleValidationErrorDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:10:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:73:47)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Refresh token required
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:134:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Refresh token required'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Refresh token required
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:134:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Refresh token required'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Razorpay order creation failed: Razorpay is not configured. Please set RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in your .env file.
+    at createOrder (D:\Project\MERN-Ecommerce\server\src\services\razorpayService.js:84:11)
+    at D:\Project\MERN-Ecommerce\server\src\controllers\paymentController.js:91:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  isOperational: true,
+  message: 'Razorpay order creation failed: Razorpay is not configured. Please set RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in your .env file.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Razorpay order creation failed: Razorpay is not configured. Please set RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in your .env file.
+    at createOrder (D:\Project\MERN-Ecommerce\server\src\services\razorpayService.js:84:11)
+    at D:\Project\MERN-Ecommerce\server\src\controllers\paymentController.js:91:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  isOperational: true,
+  message: 'Razorpay order creation failed: Razorpay is not configured. Please set RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in your .env file.'
+}
+STACK: undefined
+
