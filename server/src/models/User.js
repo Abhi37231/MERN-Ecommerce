@@ -144,19 +144,17 @@ userSchema.pre('save', async function () {
  * Set passwordChangedAt when password is modified (not on new user creation).
  * Subtract 1 second to handle timestamp precision edge cases with JWT iat.
  */
-userSchema.pre('save', function (next) {
-  if (!this.isModified('password') || this.isNew) return next();
+userSchema.pre('save', async function () {
+  if (!this.isModified('password') || this.isNew) return;
   this.passwordChangedAt = Date.now() - 1000;
-  next();
 });
 
 /**
  * Filter out inactive users from all find queries.
  * Soft-delete pattern: isActive=false users are "deleted" but data is preserved.
  */
-userSchema.pre(/^find/, function (next) {
+userSchema.pre(/^find/, async function () {
   this.find({ isActive: { $ne: false } });
-  next();
 });
 
 // ─── Instance Methods ─────────────────────────────────────────────────────────
