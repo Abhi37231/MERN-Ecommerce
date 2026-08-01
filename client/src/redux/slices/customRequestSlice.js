@@ -8,7 +8,7 @@ export const createCustomRequest = createAsyncThunk(
       const response = await api.post('/custom-requests', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-      return response.data.data.customRequest;
+      return response.data.customRequest || response.customRequest;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || 'Failed to create request');
     }
@@ -20,7 +20,7 @@ export const fetchMyRequests = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await api.get('/custom-requests/my-requests');
-      return response.data.data.requests;
+      return response.data.requests || response.requests;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || 'Failed to fetch requests');
     }
@@ -32,7 +32,7 @@ export const fetchAllRequests = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await api.get('/custom-requests');
-      return response.data.data.requests;
+      return response.data.requests || response.requests;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || 'Failed to fetch all requests');
     }
@@ -44,7 +44,7 @@ export const updateRequestStatus = createAsyncThunk(
   async ({ id, ...data }, { rejectWithValue }) => {
     try {
       const response = await api.put(`/custom-requests/${id}`, data);
-      return response.data.data.customRequest;
+      return response.data.customRequest || response.customRequest;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || 'Failed to update request');
     }
@@ -56,7 +56,7 @@ export const acceptQuote = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await api.post(`/custom-requests/${id}/accept`);
-      return response.data.data.customRequest;
+      return response.data.customRequest || response.customRequest;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || 'Failed to accept quote');
     }
