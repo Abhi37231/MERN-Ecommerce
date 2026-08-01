@@ -29,11 +29,12 @@ const Home = () => {
         const categoriesWithProducts = await Promise.all(
           topCategories.map(async (cat) => {
             try {
-              const prodRes = await api.get(`/products?category=${cat._id}&limit=1`);
-              const product = prodRes.data.products?.[0];
+              const prodRes = await api.get(`/products?category=${cat._id}&limit=2`);
+              const products = prodRes.data.products || [];
               return {
                 ...cat,
-                sampleProductImage: product?.images?.[0]?.url || null
+                sampleProductImage1: products[0]?.images?.[0]?.url || null,
+                sampleProductImage2: products[1]?.images?.[0]?.url || products[0]?.images?.[0]?.url || null
               };
             } catch (err) {
               return cat;
@@ -156,7 +157,7 @@ const Home = () => {
                   {/* Back Image (Stacked Effect) */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-md transform translate-x-3 translate-y-3 rotate-3 transition-all duration-500 group-hover:translate-x-5 group-hover:translate-y-5 group-hover:rotate-6 z-0 bg-gray-200 dark:bg-gray-800">
                     <img
-                      src={category.sampleProductImage || category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
+                      src={category.sampleProductImage1 || category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
                       alt={`${category.name} background`}
                       className="w-full h-full object-cover opacity-80"
                     />
@@ -165,7 +166,7 @@ const Home = () => {
                   {/* Front Image */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-sm z-10 bg-gray-100 dark:bg-gray-800">
                     <img
-                      src={category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
+                      src={category.sampleProductImage2 || category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
                       alt={category.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
