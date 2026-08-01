@@ -208,23 +208,11 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Trending Products */}
+        {/* Trending Now Heading */}
         <section>
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Trending Now</h2>
             <p className="text-gray-500 dark:text-gray-400 mt-2">What everyone is buying</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {isLoading ? (
-              Array(4).fill(0).map((_, i) => (
-                <div key={i} className="skeleton h-[400px] rounded-xl w-full"></div>
-              ))
-            ) : (
-              trendingProducts.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))
-            )}
           </div>
         </section>
 
@@ -246,6 +234,21 @@ const Home = () => {
             <Link to="/custom-request" className="btn bg-white text-primary-900 hover:bg-gray-100 px-10 py-4 uppercase tracking-widest text-sm">
               Request a Quote
             </Link>
+          </div>
+        </section>
+
+        {/* Trending Products Grid */}
+        <section>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {isLoading ? (
+              Array(4).fill(0).map((_, i) => (
+                <div key={i} className="skeleton h-[400px] rounded-xl w-full"></div>
+              ))
+            ) : (
+              trendingProducts.map((product) => (
+                <ProductCard key={product._id} product={product} />
+              ))
+            )}
           </div>
         </section>
       </div>
