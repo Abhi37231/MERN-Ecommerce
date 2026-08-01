@@ -4378,3 +4378,33 @@ STACK: Error: "SS-2026-000022" already exists for "orderNumber".
     at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
     at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
 
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\Order.js:218:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:61:24)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:403:5)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:108:17
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
+ORIGINAL STACK:
+TypeError: next is not a function
+    at model.<anonymous> (D:\Project\MERN-Ecommerce\server\src\models\Order.js:218:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Kareem.execPre (D:\Project\MERN-Ecommerce\server\node_modules\kareem\index.js:61:24)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:403:5)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:108:17
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: { statusCode: 500, status: 'error', message: 'next is not a function' }
+STACK: undefined
+
