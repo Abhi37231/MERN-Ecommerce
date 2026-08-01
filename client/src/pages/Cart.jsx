@@ -4,12 +4,29 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag, Tag, Check, X } from 'lucide-react';
 import { updateCartItem, removeFromCart, clearCart, applyCoupon, removeCoupon } from '../redux/slices/cartSlice';
 import toast from 'react-hot-toast';
+import api from '../utils/axios';
+import { useEffect } from 'react';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { items, subtotal, couponDiscount, couponCode, total } = useSelector((state) => state.cart);
   const [couponInput, setCouponInput] = useState('');
+  const [settings, setSettings] = useState(null);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const res = await api.get('/settings');
+        if (res.data?.data?.settings) {
+          setSettings(res.data.data.settings);
+        }
+      } catch (err) {
+        console.error('Failed to load settings:', err);
+      }
+    };
+    fetchSettings();
+  }, []);
 
   const handleUpdateQty = (itemId, newQty) => {
     if (newQty < 1) {
@@ -64,7 +81,15 @@ const Cart = () => {
     );
   }
 
-  const calculatedTotal = total || subtotal - couponDiscount;
+  const discountedSubtotal = Math.max(0, subtotal - couponDiscount);
+  const baseShippingCost = settings?.shippingCost ?? 50;
+  const freeShippingThreshold = settings?.freeShippingThreshold ?? 1000;
+  
+  const dynamicShippingCost = discountedSubtotal > freeShippingThreshold ? 0 : baseShippingCost;
+
+  // Note: the final total calculation with GST is handled on Checkout page,
+  // but we can update the Cart's total to include the dynamic shipping cost.
+  const calculatedTotal = total || (discountedSubtotal + dynamicShippingCost);
 
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">
@@ -190,7 +215,7 @@ const Cart = () => {
                 )}
                 <div className="flex justify-between">
                   <span>Shipping</span>
-                  <span>{subtotal > 1000 ? 'Free' : '₹50.00'}</span>
+                  <span>{dynamicShippingCost === 0 ? 'Free' : `₹${dynamicShippingCost.toFixed(2)}`}</span>
                 </div>
               </div>
 
