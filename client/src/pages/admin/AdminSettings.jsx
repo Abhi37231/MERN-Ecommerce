@@ -81,7 +81,7 @@ const AdminSettings = () => {
           <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Store Name</label>
-              <input type="text" name="storeName" value={settings.storeName} onChange={handleChange} className="input-field" required />
+              <input type="text" name="storeName" value={settings.storeName} onChange={handleChange} className="input-field" />
             </div>
             
             <div className="space-y-1">
@@ -93,17 +93,17 @@ const AdminSettings = () => {
 
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Support Email</label>
-              <input type="email" name="storeEmail" value={settings.storeEmail} onChange={handleChange} className="input-field" required />
+              <input type="email" name="storeEmail" value={settings.storeEmail} onChange={handleChange} className="input-field" />
             </div>
 
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Support Phone</label>
-              <input type="text" name="storePhone" value={settings.storePhone} onChange={handleChange} className="input-field" required />
+              <input type="text" name="storePhone" value={settings.storePhone} onChange={handleChange} className="input-field" />
             </div>
 
             <div className="space-y-1 md:col-span-2">
               <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Store Physical Address</label>
-              <textarea name="storeAddress" value={settings.storeAddress} onChange={handleChange} className="input-field h-24 resize-none" required></textarea>
+              <textarea name="storeAddress" value={settings.storeAddress} onChange={handleChange} className="input-field h-24 resize-none"></textarea>
             </div>
           </div>
         </div>
