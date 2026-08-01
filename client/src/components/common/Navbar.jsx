@@ -88,7 +88,7 @@ const Navbar = () => {
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-[110] transition-all duration-300 ${
           isScrolled 
             ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm py-3' 
             : 'bg-white dark:bg-dark-deep py-5'
@@ -294,7 +294,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-30 pt-20 bg-white dark:bg-gray-900 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-[100] pt-20 bg-white dark:bg-gray-900 md:hidden overflow-y-auto"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
