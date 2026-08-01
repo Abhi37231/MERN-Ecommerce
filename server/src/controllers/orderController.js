@@ -538,6 +538,50 @@ const updateAdminNote = asyncHandler(async (req, res, next) => {
   sendSuccess(res, 200, 'Admin note updated', { order });
 });
 
+/**
+ * @desc    Update order shipping address (Admin)
+ * @route   PUT /api/v1/orders/:id
+ * @access  Admin
+ */
+const updateOrderAddress = asyncHandler(async (req, res, next) => {
+  const { shippingAddress } = req.body;
+  const order = await Order.findById(req.params.id);
+  
+  if (!order) return next(new AppError('Order not found', 404));
+  
+  if (shippingAddress) {
+    order.shippingAddress = shippingAddress;
+  }
+  
+  await order.save();
+  
+  sendSuccess(res, 200, 'Order address updated successfully', { order });
+});
+
+/**
+ * @desc    Delete order (Admin)
+ * @route   DELETE /api/v1/orders/:id
+ * @access  Admin
+ */
+const deleteOrder = asyncHandler(async (req, res, next) => {
+  const order = await Order.findById(req.params.id);
+  
+  if (!order) return next(new AppError('Order not found', 404));
+  
+  // Restore stock if the order wasn't already cancelled
+  if (order.status !== 'cancelled') {
+    for (const item of order.items) {
+      await require('../models/Product').findByIdAndUpdate(item.product, {
+        $inc: { stock: item.quantity, soldCount: -item.quantity }
+      });
+    }
+  }
+  
+  await order.deleteOne();
+  
+  sendSuccess(res, 200, 'Order deleted successfully');
+});
+
 module.exports = {
   createOrder,
   getMyOrders,
@@ -548,5 +592,7 @@ module.exports = {
   updatePaymentStatus,
   getOrderAnalytics,
   bulkUpdateOrders,
-  updateAdminNote
+  updateAdminNote,
+  updateOrderAddress,
+  deleteOrder
 };

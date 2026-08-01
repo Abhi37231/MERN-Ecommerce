@@ -33,6 +33,9 @@ const createTransporter = () => {
   });
 };
 
+let etherealAccount = null;
+let etherealTransporter = null;
+
 /**
  * Send a transactional email.
  * @param {object} options
@@ -42,10 +45,33 @@ const createTransporter = () => {
  * @param {string} [options.text]  - Plain text fallback (auto-generated if omitted)
  */
 const sendEmail = async ({ to, subject, html, text }) => {
-  const transporter = createTransporter();
+  let transporter;
+  let isEthereal = false;
+
+  // Fallback to Ethereal if credentials are not set or are just the placeholder
+  if (!process.env.EMAIL_USER || process.env.EMAIL_USER === 'your_email@gmail.com') {
+    isEthereal = true;
+    if (!etherealTransporter) {
+      if (!etherealAccount) {
+        etherealAccount = await nodemailer.createTestAccount();
+      }
+      etherealTransporter = nodemailer.createTransport({
+        host: 'smtp.ethereal.email',
+        port: 587,
+        secure: false,
+        auth: {
+          user: etherealAccount.user,
+          pass: etherealAccount.pass,
+        },
+      });
+    }
+    transporter = etherealTransporter;
+  } else {
+    transporter = createTransporter();
+  }
 
   const mailOptions = {
-    from: `"${process.env.EMAIL_FROM_NAME || 'ShopSphere'}" <${process.env.EMAIL_FROM || process.env.EMAIL_USER}>`,
+    from: `"${process.env.EMAIL_FROM_NAME || 'ShopSphere'}" <${process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@shopsphere.com'}>`,
     to,
     subject,
     html,
@@ -53,6 +79,14 @@ const sendEmail = async ({ to, subject, html, text }) => {
   };
 
   const info = await transporter.sendMail(mailOptions);
+  
+  if (isEthereal) {
+    console.log('==================================================');
+    console.log('📩 TEST EMAIL SENT VIA ETHEREAL');
+    console.log('🔗 Preview URL: ' + nodemailer.getTestMessageUrl(info));
+    console.log('==================================================');
+  }
+  
   return info;
 };
 

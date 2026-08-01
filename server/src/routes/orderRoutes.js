@@ -32,5 +32,7 @@ router.get('/', orderController.getAllOrders);
 router.patch('/:id/status', orderController.updateOrderStatus);
 router.patch('/:id/payment', orderController.updatePaymentStatus);
 router.patch('/:id/admin-note', orderController.updateAdminNote);
+router.put('/:id', orderController.updateOrderAddress);
+router.delete('/:id', orderController.deleteOrder);
 
 module.exports = router;

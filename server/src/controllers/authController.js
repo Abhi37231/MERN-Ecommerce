@@ -163,7 +163,7 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
     return sendSuccess(res, 200, 'If that email exists in our system, a reset link has been sent.');
   }
 
-  const { rawToken, hashedToken, expiresAt } = generateToken(60); // 1 hour
+  const { rawToken, hashedToken, expiresAt } = generateToken(10); // 10 minutes
   user.passwordResetToken = hashedToken;
   user.passwordResetExpires = expiresAt;
   await user.save({ validateBeforeSave: false });
@@ -171,17 +171,18 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
   const resetUrl = `${process.env.CLIENT_URL || 'http://localhost:5173'}/reset-password/${rawToken}`;
 
   try {
-    sendEmail({
+    await sendEmail({
       to: user.email,
       subject: 'Password Reset Request - ShopSphere',
       html: passwordResetTemplate ? passwordResetTemplate(user.firstName, resetUrl) : `<p>Reset password: <a href="${resetUrl}">${resetUrl}</a></p>`,
-    }).catch(err => console.error('Forgot password email failed in background:', err.message));
+    });
     return sendSuccess(res, 200, 'Password reset link sent to your email.');
   } catch (err) {
+    console.error('Forgot password email failed:', err.message);
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
-    return next(new AppError('Error sending email. Please try again later.', 500));
+    return next(new AppError('Error sending email. Please check your server .env credentials.', 500));
   }
 });
 

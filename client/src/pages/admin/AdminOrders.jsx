@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { 
   ShoppingCart, CheckCircle2, Clock, Truck, XCircle, Search, Filter, 
   Download, Printer, ChevronDown, ChevronUp, Package, CreditCard,
-  MessageCircle, Phone, Mail, Edit, Calendar, User, LayoutList, RefreshCw, FileText
+  MessageCircle, Phone, Mail, Edit, Trash2, Calendar, User, LayoutList, RefreshCw, FileText
 } from 'lucide-react';
 import api from '../../utils/axios';
 import toast from 'react-hot-toast';
@@ -21,6 +21,11 @@ const AdminOrders = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [adminNote, setAdminNote] = useState('');
+  
+  // Edit Address State
+  const [isEditAddressModalOpen, setIsEditAddressModalOpen] = useState(false);
+  const [editAddressForm, setEditAddressForm] = useState(null);
+  const [isSubmittingAddress, setIsSubmittingAddress] = useState(false);
   
   const printLabelRef = useRef(null);
   
@@ -130,6 +135,41 @@ const AdminOrders = () => {
       fetchOrders();
     } catch (err) {
       toast.error('Failed to save note');
+    }
+  };
+
+  const handleDeleteOrder = async () => {
+    if(!selectedOrder) return;
+    if(!window.confirm('Are you sure you want to permanently delete this order? This action cannot be undone.')) return;
+    try {
+      await api.delete(`/orders/${selectedOrder._id}`);
+      toast.success('Order deleted successfully');
+      setSelectedOrder(null);
+      fetchOrders();
+      fetchAnalytics();
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Failed to delete order');
+    }
+  };
+
+  const openEditAddressModal = () => {
+    setEditAddressForm({ ...selectedOrder.shippingAddress });
+    setIsEditAddressModalOpen(true);
+  };
+
+  const handleUpdateAddress = async (e) => {
+    e.preventDefault();
+    try {
+      setIsSubmittingAddress(true);
+      const res = await api.put(`/orders/${selectedOrder._id}`, { shippingAddress: editAddressForm });
+      toast.success('Shipping address updated');
+      setSelectedOrder(res.data.data?.order || res.data.order);
+      setIsEditAddressModalOpen(false);
+      fetchOrders();
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Failed to update address');
+    } finally {
+      setIsSubmittingAddress(false);
     }
   };
 
@@ -450,6 +490,9 @@ const AdminOrders = () => {
                   <button onClick={handleDownloadPdf} className="btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 shadow-sm flex items-center justify-center gap-2 px-3 py-1.5 text-sm" title="Download PDF">
                       <FileText size={16} /> PDF
                   </button>
+                  <button onClick={handleDeleteOrder} className="btn bg-red-50 border border-red-200 text-red-600 hover:bg-red-100 shadow-sm flex items-center justify-center gap-2 px-3 py-1.5 text-sm" title="Delete Order">
+                      <Trash2 size={16} /> Delete
+                  </button>
                   <button onClick={() => setSelectedOrder(null)} className="p-2 ml-2 text-gray-400 hover:text-red-500 transition-colors bg-white dark:bg-gray-800 rounded-full shadow-sm border border-gray-200 dark:border-gray-700">
                     <XCircle size={20} />
                   </button>
@@ -489,9 +532,12 @@ const AdminOrders = () => {
                         <p className="text-sm text-gray-500 mt-1">{selectedOrder.user?.email}</p>
                     </div>
                     <div className="bg-gray-50 dark:bg-gray-800/30 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
-                        <h3 className="font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-3">
-                            <Truck size={16} className="text-primary-500" /> Shipping
-                        </h3>
+                        <div className="flex justify-between items-center mb-3">
+                            <h3 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                                <Truck size={16} className="text-primary-500" /> Shipping
+                            </h3>
+                            <button onClick={openEditAddressModal} className="text-gray-400 hover:text-primary-600 transition-colors"><Edit size={16} /></button>
+                        </div>
                         <p className="font-semibold text-sm">{selectedOrder.shippingAddress?.fullName}</p>
                         <p className="text-sm text-gray-500 mt-1 line-clamp-2">
                             {selectedOrder.shippingAddress?.addressLine1}, 
@@ -587,6 +633,52 @@ const AdminOrders = () => {
                 </div>
 
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Address Modal */}
+      {isEditAddressModalOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsEditAddressModalOpen(false)}></div>
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl w-full max-w-md relative z-10 animate-fade-in-up">
+            <div className="flex justify-between items-center p-5 border-b border-gray-100 dark:border-gray-800">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Edit Shipping Address</h3>
+            </div>
+            
+            <form onSubmit={handleUpdateAddress} className="p-5 space-y-4 max-h-[70vh] overflow-y-auto">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
+                <input type="text" required value={editAddressForm?.fullName || ''} onChange={e => setEditAddressForm({...editAddressForm, fullName: e.target.value})} className="input-field" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone</label>
+                <input type="text" required value={editAddressForm?.phone || ''} onChange={e => setEditAddressForm({...editAddressForm, phone: e.target.value})} className="input-field" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Address Line 1</label>
+                <input type="text" required value={editAddressForm?.addressLine1 || ''} onChange={e => setEditAddressForm({...editAddressForm, addressLine1: e.target.value})} className="input-field" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">City</label>
+                  <input type="text" required value={editAddressForm?.city || ''} onChange={e => setEditAddressForm({...editAddressForm, city: e.target.value})} className="input-field" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">State</label>
+                  <input type="text" required value={editAddressForm?.state || ''} onChange={e => setEditAddressForm({...editAddressForm, state: e.target.value})} className="input-field" />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pincode</label>
+                <input type="text" required value={editAddressForm?.pincode || ''} onChange={e => setEditAddressForm({...editAddressForm, pincode: e.target.value})} className="input-field" />
+              </div>
+              
+              <div className="pt-4 flex justify-end gap-3 border-t border-gray-100 dark:border-gray-800">
+                <button type="button" onClick={() => setIsEditAddressModalOpen(false)} className="btn bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300">Cancel</button>
+                <button type="submit" disabled={isSubmittingAddress} className="btn btn-primary disabled:opacity-50">Save Changes</button>
+              </div>
+            </form>
           </div>
         </div>
       )}
