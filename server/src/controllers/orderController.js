@@ -359,7 +359,13 @@ const updateOrderStatus = asyncHandler(async (req, res, next) => {
   if (trackingUrl) order.trackingUrl = trackingUrl;
   if (shippingProvider) order.shippingProvider = shippingProvider;
   
-  if (status === 'delivered') order.deliveredAt = Date.now();
+  if (status === 'delivered') {
+    order.deliveredAt = Date.now();
+    if (order.payment && order.payment.method === 'cod' && order.payment.status !== 'paid') {
+      order.payment.status = 'paid';
+      order.payment.paidAt = Date.now();
+    }
+  }
   if (status === 'cancelled') {
       order.cancelledAt = Date.now();
       order.cancellationReason = comment;
