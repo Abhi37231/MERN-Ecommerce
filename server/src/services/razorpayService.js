@@ -81,7 +81,8 @@ const createOrder = async ({ amount, currency = 'INR', receipt, notes = {} }) =>
       status: order.status,
     };
   } catch (error) {
-    throw new AppError(`Razorpay order creation failed: ${error.message}`, 500);
+    const errorMsg = error.error?.description || error.message || JSON.stringify(error);
+    throw new AppError(`Razorpay order creation failed: ${errorMsg}`, 500);
   }
 };
 
