@@ -69,8 +69,12 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (Postman, mobile apps, etc.)
-      if (!origin || allowedOrigins.includes(origin)) {
+      // Allow requests with no origin (Postman), explicit allowed origins, or Vercel preview links
+      if (
+        !origin || 
+        allowedOrigins.includes(origin) || 
+        /^https:\/\/mern-ecommerce-.*\.vercel\.app$/.test(origin)
+      ) {
         callback(null, true);
       } else {
         callback(new Error(`CORS: origin "${origin}" is not allowed.`));
