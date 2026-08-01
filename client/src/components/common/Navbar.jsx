@@ -22,6 +22,8 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   
   const { user, isAuthenticated } = useSelector((state) => state.auth);
   const { totalItems } = useSelector((state) => state.cart);
@@ -64,6 +66,15 @@ const Navbar = () => {
       navigate('/');
     } catch (error) {
       toast.error('Logout failed');
+    }
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+      setIsSearchOpen(false);
+      setSearchQuery('');
     }
   };
 
@@ -115,8 +126,11 @@ const Navbar = () => {
             {/* Right Side Icons */}
             <div className="flex items-center space-x-4 md:space-x-6 z-50">
               {/* Search Icon */}
-              <button className="text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors">
-                <Search size={20} />
+              <button 
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
+              >
+                {isSearchOpen ? <X size={20} /> : <Search size={20} />}
               </button>
 
               {/* Wishlist Icon (Auth only) */}
@@ -239,6 +253,37 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {/* Search Bar Dropdown */}
+        <AnimatePresence>
+          {isSearchOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-deep overflow-hidden"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <form onSubmit={handleSearch} className="relative w-full max-w-2xl mx-auto">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search for products..."
+                    className="w-full pl-4 pr-12 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-900 dark:text-white"
+                    autoFocus
+                  />
+                  <button 
+                    type="submit" 
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary-600"
+                  >
+                    <Search size={20} />
+                  </button>
+                </form>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Mobile Menu (Overlay) */}
