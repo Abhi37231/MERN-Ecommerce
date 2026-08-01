@@ -62,13 +62,13 @@ const register = asyncHandler(async (req, res, next) => {
 
   const verificationUrl = `${process.env.CLIENT_URL || 'http://localhost:5173'}/verify-email/${rawToken}`;
   try {
-    await sendEmail({
+    sendEmail({
       to: user.email,
       subject: 'Verify your ShopSphere email',
       html: emailVerificationTemplate(user.firstName, verificationUrl),
-    });
+    }).catch(err => console.error('Email send failed in background:', err.message));
   } catch (err) {
-    console.error('Email send failed:', err.message);
+    console.error('Email send failed synchronously:', err.message);
   }
 
   return sendAuthResponse(
@@ -171,11 +171,11 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
   const resetUrl = `${process.env.CLIENT_URL || 'http://localhost:5173'}/reset-password/${rawToken}`;
 
   try {
-    await sendEmail({
+    sendEmail({
       to: user.email,
       subject: 'Password Reset Request - ShopSphere',
       html: passwordResetTemplate ? passwordResetTemplate(user.firstName, resetUrl) : `<p>Reset password: <a href="${resetUrl}">${resetUrl}</a></p>`,
-    });
+    }).catch(err => console.error('Forgot password email failed in background:', err.message));
     return sendSuccess(res, 200, 'Password reset link sent to your email.');
   } catch (err) {
     user.passwordResetToken = undefined;

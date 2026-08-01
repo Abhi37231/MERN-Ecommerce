@@ -100,15 +100,15 @@ const createOrder = asyncHandler(async (req, res, next) => {
     { items: [], coupon: null, couponCode: null, couponDiscount: 0 }
   );
 
-  // 8. Send Confirmation Email (Async)
+  // 8. Send Confirmation Email (Fire and forget)
   try {
-    await sendEmail({
+    sendEmail({
       to: req.user.email,
       subject: `Order Confirmation - ${order.orderNumber}`,
       html: orderConfirmationTemplate(req.user.firstName, order.orderNumber, order.totalAmount)
-    });
+    }).catch(error => console.error('Order confirmation email failed in background:', error));
   } catch (error) {
-    console.error('Order confirmation email failed:', error);
+    console.error('Order confirmation email failed synchronously:', error);
   }
 
   sendSuccess(res, 201, 'Order placed successfully.', { order });
