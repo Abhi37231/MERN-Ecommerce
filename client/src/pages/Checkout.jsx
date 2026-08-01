@@ -172,7 +172,7 @@ const Checkout = () => {
     );
   }
 
-  const calculatedTotal = total || subtotal - couponDiscount + (subtotal > 1000 ? 0 : 50);
+  const calculatedTotal = subtotal - couponDiscount + (subtotal > 1000 ? 0 : 50);
 
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">

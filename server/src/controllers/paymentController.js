@@ -216,9 +216,9 @@ const verifyPaymentCtrl = asyncHandler(async (req, res, next) => {
     { items: [], coupon: null, couponCode: null, couponDiscount: 0 }
   );
 
-  // Send confirmation email (async, non-blocking)
+  // Send confirmation email (fire-and-forget)
   try {
-    await sendEmail({
+    sendEmail({
       to: req.user.email,
       subject: `Order Confirmed - ${order.orderNumber}`,
       html: orderConfirmationTemplate(
@@ -226,9 +226,9 @@ const verifyPaymentCtrl = asyncHandler(async (req, res, next) => {
         order.orderNumber,
         order.totalAmount
       ),
-    });
+    }).catch(emailError => console.error('Order confirmation email failed in background:', emailError.message));
   } catch (emailError) {
-    console.error('Order confirmation email failed:', emailError.message);
+    console.error('Order confirmation email failed synchronously:', emailError.message);
   }
 
   sendSuccess(res, 200, 'Payment verified successfully. Order confirmed.', { order });
