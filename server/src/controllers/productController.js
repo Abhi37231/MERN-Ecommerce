@@ -227,7 +227,7 @@ const createProduct = asyncHandler(async (req, res, next) => {
   const {
     name, description, shortDescription, price, discountPercentage,
     category, brand, stock, sku, tags, variants, isFeatured,
-    isTrending, weight, dimensions, shippingInfo, metaTitle, metaDescription,
+    isTrending, codAvailable, weight, dimensions, shippingInfo, metaTitle, metaDescription,
   } = req.body;
 
   // Validate category exists
@@ -265,6 +265,7 @@ const createProduct = asyncHandler(async (req, res, next) => {
     variants: parsedVariants,
     isFeatured: isFeatured === 'true',
     isTrending: isTrending === 'true',
+    codAvailable: codAvailable === undefined ? true : codAvailable === 'true',
     weight: weight ? Number(weight) : undefined,
     dimensions: parsedDimensions,
     shippingInfo: parsedShippingInfo,
@@ -321,6 +322,7 @@ const updateProduct = asyncHandler(async (req, res, next) => {
   if (req.body.variants) req.body.variants = JSON.parse(req.body.variants);
   if (req.body.tags) req.body.tags = JSON.parse(req.body.tags);
   if (req.body.sku === '') req.body.sku = undefined;
+  if (req.body.codAvailable !== undefined) req.body.codAvailable = req.body.codAvailable === 'true';
 
   const updated = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,

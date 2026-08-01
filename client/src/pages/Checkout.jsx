@@ -234,6 +234,14 @@ const Checkout = () => {
       }]
     : items;
 
+  const isCodDisabled = (!customRequestId) && items.some(item => item.product?.codAvailable === false);
+  
+  useEffect(() => {
+    if (isCodDisabled && paymentMethod === 'cod') {
+      setPaymentMethod('razorpay');
+    }
+  }, [isCodDisabled, paymentMethod]);
+
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -399,17 +407,23 @@ const Checkout = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div
-                  onClick={() => setPaymentMethod('cod')}
-                  className={`p-4 rounded-xl border-2 cursor-pointer flex items-center gap-3 transition-all ${
-                    paymentMethod === 'cod'
+                  onClick={() => {
+                    if (!isCodDisabled) setPaymentMethod('cod');
+                  }}
+                  className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
+                    isCodDisabled ? 'opacity-60 cursor-not-allowed bg-gray-50 dark:bg-gray-800' : 'cursor-pointer'
+                  } ${
+                    paymentMethod === 'cod' && !isCodDisabled
                       ? 'border-primary-600 bg-primary-50/50 dark:bg-primary-900/10'
                       : 'border-gray-200 dark:border-gray-700'
                   }`}
                 >
-                  <Truck size={24} className="text-primary-600" />
+                  <Truck size={24} className={isCodDisabled ? "text-gray-400" : "text-primary-600"} />
                   <div>
                     <h4 className="font-bold text-sm text-gray-900 dark:text-white">Cash on Delivery (COD)</h4>
-                    <p className="text-xs text-gray-500">Pay when your order arrives</p>
+                    <p className="text-xs text-gray-500">
+                      {isCodDisabled ? 'Not available for some items in cart' : 'Pay when your order arrives'}
+                    </p>
                   </div>
                 </div>
 

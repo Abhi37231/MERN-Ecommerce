@@ -23,7 +23,7 @@ const { sendSuccess } = require('../utils/apiResponse');
 const getOrCreateCart = async (userId) => {
   let cart = await Cart.findOne({ user: userId }).populate({
     path: 'items.product',
-    select: 'name images price discountPercentage stock isActive slug',
+    select: 'name images price discountPercentage stock isActive slug codAvailable',
   });
 
   if (!cart) {
@@ -91,7 +91,7 @@ const addToCart = asyncHandler(async (req, res, next) => {
   await cart.save();
   await cart.populate({
     path: 'items.product',
-    select: 'name images price discountPercentage stock isActive slug',
+    select: 'name images price discountPercentage stock isActive slug codAvailable',
   });
 
   sendSuccess(res, 200, 'Item added to cart.', { cart });
@@ -126,7 +126,7 @@ const updateCartItem = asyncHandler(async (req, res, next) => {
 
   await cart.populate({
     path: 'items.product',
-    select: 'name images price discountPercentage stock isActive slug',
+    select: 'name images price discountPercentage stock isActive slug codAvailable',
   });
 
   sendSuccess(res, 200, 'Cart updated.', { cart });

@@ -145,6 +145,10 @@ const productSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    codAvailable: {
+      type: Boolean,
+      default: true,
+    },
     isNewArrival: {
       type: Boolean,
       default: true,

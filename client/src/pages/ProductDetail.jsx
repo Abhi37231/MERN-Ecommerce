@@ -396,21 +396,37 @@ const ProductDetail = () => {
               </button>
             </div>
 
-            {/* Stock status */}
-            <div className="flex items-center text-sm mb-8">
-              {product.stock > 0 ? (
-                <>
-                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full mr-2"></div>
-                  <span className="text-gray-600 dark:text-gray-400">
-                    <span className="font-semibold text-gray-900 dark:text-white">{product.stock}</span> items left in stock
+            {/* Stock and COD status */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm mb-8">
+              <div className="flex items-center">
+                {product.stock > 0 ? (
+                  <>
+                    <div className="w-2.5 h-2.5 bg-green-500 rounded-full mr-2"></div>
+                    <span className="text-gray-600 dark:text-gray-400">
+                      <span className="font-semibold text-gray-900 dark:text-white">{product.stock}</span> items left in stock
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-2.5 h-2.5 bg-red-500 rounded-full mr-2"></div>
+                    <span className="text-red-600 dark:text-red-400 font-medium">Out of stock</span>
+                  </>
+                )}
+              </div>
+
+              <div className="hidden sm:block w-px h-4 bg-gray-300 dark:bg-gray-700"></div>
+
+              <div className="flex items-center">
+                {product.codAvailable === false ? (
+                  <span className="inline-flex items-center px-2 py-1 rounded-md bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 font-medium text-xs">
+                    <XCircle className="w-3.5 h-3.5 mr-1" /> COD Not Available
                   </span>
-                </>
-              ) : (
-                <>
-                  <div className="w-2.5 h-2.5 bg-red-500 rounded-full mr-2"></div>
-                  <span className="text-red-600 dark:text-red-400 font-medium">Out of stock</span>
-                </>
-              )}
+                ) : (
+                  <span className="inline-flex items-center px-2 py-1 rounded-md bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 font-medium text-xs">
+                    <Check className="w-3.5 h-3.5 mr-1" /> Cash on Delivery Available
+                  </span>
+                )}
+              </div>
             </div>
 
             {/* Features list */}

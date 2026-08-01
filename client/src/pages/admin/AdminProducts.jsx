@@ -24,6 +24,7 @@ const AdminProducts = () => {
     brand: '',
     stock: '',
     sku: '',
+    codAvailable: true,
   });
   const [images, setImages] = useState([]);
   const [existingImages, setExistingImages] = useState([]);
@@ -32,7 +33,8 @@ const AdminProducts = () => {
   const resetForm = () => {
     setFormData({
       name: '', description: '', shortDescription: '', price: '',
-      discountPercentage: '0', category: '', brand: '', stock: '', sku: ''
+      discountPercentage: '0', category: '', brand: '', stock: '', sku: '',
+      codAvailable: true
     });
     setImages([]);
     setExistingImages([]);
@@ -133,6 +135,7 @@ const AdminProducts = () => {
       brand: product.brand || '',
       stock: product.stock || '',
       sku: product.sku || '',
+      codAvailable: product.codAvailable !== false,
     });
     
     if (product.images) {
@@ -327,6 +330,20 @@ const AdminProducts = () => {
                   <input type="text" value={formData.brand} onChange={(e) => setFormData({ ...formData, brand: e.target.value })} className="input-field py-2 text-sm" />
                 </div>
               </div>
+              
+              <div className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  id="codAvailable"
+                  checked={formData.codAvailable}
+                  onChange={(e) => setFormData({ ...formData, codAvailable: e.target.checked })}
+                  className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                />
+                <label htmlFor="codAvailable" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Cash on Delivery (COD) Available
+                </label>
+              </div>
+
               <div>
                 <label className="text-xs font-semibold text-gray-600">Description *</label>
                 <textarea rows={3} value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} className="input-field py-2 text-sm" required />
