@@ -22,9 +22,33 @@ const Home = () => {
           api.get('/categories?parent=null')
         ]);
 
+        let fetchedCategories = categoriesRes.data.categories || [];
+        
+        // Fetch sample products for top 4 categories to show in stacked effect
+        const topCategories = fetchedCategories.slice(0, 4);
+        const categoriesWithProducts = await Promise.all(
+          topCategories.map(async (cat) => {
+            try {
+              const prodRes = await api.get(`/products?category=${cat._id}&limit=1`);
+              const product = prodRes.data.products?.[0];
+              return {
+                ...cat,
+                sampleProductImage: product?.images?.[0]?.url || null
+              };
+            } catch (err) {
+              return cat;
+            }
+          })
+        );
+        
+        fetchedCategories = [
+          ...categoriesWithProducts,
+          ...fetchedCategories.slice(4)
+        ];
+
         setFeaturedProducts(featuredRes.data.products || []);
         setTrendingProducts(trendingRes.data.products || []);
-        setCategories(categoriesRes.data.categories || []);
+        setCategories(fetchedCategories);
       } catch (error) {
         console.error('Failed to fetch home data', error);
       } finally {
@@ -132,9 +156,9 @@ const Home = () => {
                   {/* Back Image (Stacked Effect) */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-md transform translate-x-3 translate-y-3 rotate-3 transition-all duration-500 group-hover:translate-x-5 group-hover:translate-y-5 group-hover:rotate-6 z-0 bg-gray-200 dark:bg-gray-800">
                     <img
-                      src={category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
+                      src={category.sampleProductImage || category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
                       alt={`${category.name} background`}
-                      className="w-full h-full object-cover opacity-60 filter blur-[1px]"
+                      className="w-full h-full object-cover opacity-80"
                     />
                   </div>
                   
