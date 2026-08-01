@@ -1,11 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-} from 'react-icons/fa';
+import { Mail, Phone } from 'lucide-react';
+import { FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -28,24 +23,9 @@ const Footer = () => {
             </p>
 
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <span className="sr-only">Facebook</span>
-                <FaFacebook size={20} />
-              </a>
-
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/artful.decorates?igsh=MXY5azAxeGVza28yaQ==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <span className="sr-only">Instagram</span>
                 <FaInstagram size={20} />
-              </a>
-
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <span className="sr-only">Twitter</span>
-                <FaTwitter size={20} />
-              </a>
-
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <span className="sr-only">LinkedIn</span>
-                <FaLinkedin size={20} />
               </a>
             </div>
           </div>
@@ -165,22 +145,12 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-4 text-sm">
-              <li className="flex items-start">
-                <MapPin
-                  size={18}
-                  className="mr-3 text-primary-500 shrink-0 mt-0.5"
-                />
-                <span>
-                  123 Tech Park, Phase 1, Bangalore, India 560001
-                </span>
-              </li>
-
               <li className="flex items-center">
                 <Phone
                   size={18}
                   className="mr-3 text-primary-500 shrink-0"
                 />
-                <span>+91 98765 43210</span>
+                <span>+91 9699838251</span>
               </li>
 
               <li className="flex items-center">
@@ -189,10 +159,10 @@ const Footer = () => {
                   className="mr-3 text-primary-500 shrink-0"
                 />
                 <a
-                  href="mailto:support@shopsphere.com"
+                  href="mailto:abhinandanyalamante9@gmail.com"
                   className="hover:text-primary-400 transition-colors"
                 >
-                  support@shopsphere.com
+                  abhinandanyalamante9@gmail.com
                 </a>
               </li>
             </ul>
