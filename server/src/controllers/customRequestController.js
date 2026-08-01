@@ -4,6 +4,7 @@ const cloudinary = require('../config/cloudinary');
 const asyncHandler = require('../utils/asyncHandler');
 const AppError = require('../utils/AppError');
 const { sendSuccess } = require('../utils/apiResponse');
+const { createNotification } = require('./notificationController');
 
 /**
  * @desc    Create a new custom request
@@ -84,6 +85,22 @@ const updateRequestStatus = asyncHandler(async (req, res, next) => {
   }
 
   await customRequest.save();
+
+  // Send Notification to user
+  if (status && status !== 'pending') {
+    let msg = `Your custom request #${customRequest._id.toString().substring(18).toUpperCase()} status changed to ${status}.`;
+    if (status === 'quoted') {
+      msg = `Good news! Your custom request has been quoted at ₹${priceQuote}.`;
+    }
+    createNotification({
+      user: customRequest.user,
+      title: 'Custom Request Update',
+      message: msg,
+      type: 'custom_request',
+      link: '/my-custom-requests',
+    });
+  }
+
   sendSuccess(res, 200, 'Request updated successfully.', { customRequest });
 });
 
@@ -113,10 +130,65 @@ const acceptQuote = asyncHandler(async (req, res, next) => {
   sendSuccess(res, 200, 'Quote accepted.', { customRequest });
 });
 
+/**
+ * @desc    Add a message to custom request
+ * @route   POST /api/v1/custom-requests/:id/messages
+ * @access  Private
+ */
+const addMessage = asyncHandler(async (req, res, next) => {
+  const { text } = req.body;
+  if (!text) return next(new AppError('Message text is required', 400));
+
+  const customRequest = await CustomRequest.findById(req.params.id);
+  if (!customRequest) return next(new AppError('Request not found', 404));
+
+  // Check access: must be admin or the owner
+  const isAdmin = req.user.role === 'admin';
+  if (!isAdmin && customRequest.user.toString() !== req.user._id.toString()) {
+    return next(new AppError('Not authorized', 403));
+  }
+
+  customRequest.messages.push({
+    sender: req.user._id,
+    isAdmin,
+    text,
+  });
+
+  await customRequest.save();
+
+  // Notify the other party
+  if (isAdmin) {
+    createNotification({
+      user: customRequest.user,
+      title: 'New Message on Custom Request',
+      message: 'You have a new message from the artisan.',
+      type: 'custom_request',
+      link: '/my-custom-requests',
+    });
+  }
+
+  sendSuccess(res, 201, 'Message added', { customRequest });
+});
+
+/**
+ * @desc    Delete a custom request
+ * @route   DELETE /api/v1/custom-requests/:id
+ * @access  Private (Admin)
+ */
+const deleteRequest = asyncHandler(async (req, res, next) => {
+  const customRequest = await CustomRequest.findById(req.params.id);
+  if (!customRequest) return next(new AppError('Request not found', 404));
+
+  await customRequest.deleteOne();
+  sendSuccess(res, 200, 'Request deleted successfully');
+});
+
 module.exports = {
   createRequest,
   getMyRequests,
   getAllRequests,
   updateRequestStatus,
   acceptQuote,
+  addMessage,
+  deleteRequest,
 };

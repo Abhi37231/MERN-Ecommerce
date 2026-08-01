@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMyRequests, acceptQuote } from '../redux/slices/customRequestSlice';
+import { fetchMyRequests, acceptQuote, addMessage } from '../redux/slices/customRequestSlice';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const MyCustomRequests = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { requests, loading } = useSelector((state) => state.customRequests);
+  const [newMessages, setNewMessages] = useState({});
 
   useEffect(() => {
     dispatch(fetchMyRequests());
@@ -17,10 +19,22 @@ const MyCustomRequests = () => {
     try {
       await dispatch(acceptQuote(id)).unwrap();
       toast.success('Quote accepted! Proceeding to checkout...');
-      // Normally we would redirect to a specific checkout flow for this dummy order
-      // navigate(`/checkout?customRequestId=${id}`);
+      navigate(`/checkout?customRequestId=${id}`);
     } catch (error) {
       toast.error(error || 'Failed to accept quote');
+    }
+  };
+
+  const handleSendMessage = async (e, id) => {
+    e.preventDefault();
+    const text = newMessages[id];
+    if (!text?.trim()) return;
+    try {
+      await dispatch(addMessage({ id, text })).unwrap();
+      setNewMessages({ ...newMessages, [id]: '' });
+      toast.success('Message sent');
+    } catch (error) {
+      toast.error(error || 'Failed to send message');
     }
   };
 
@@ -136,6 +150,36 @@ const MyCustomRequests = () => {
                           <strong>Note from Artisan:</strong> {request.adminNotes}
                         </div>
                       )}
+                    </div>
+
+                    {/* Chat Thread */}
+                    <div className="mt-6 border-t border-gray-100 dark:border-gray-800 pt-4">
+                      <h4 className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">Messages</h4>
+                      <div className="space-y-3 bg-gray-50 dark:bg-gray-800/30 p-4 rounded-lg max-h-48 overflow-y-auto">
+                        {request.messages?.length > 0 ? (
+                          request.messages.map((msg, idx) => (
+                            <div key={idx} className={`flex flex-col ${msg.isAdmin ? 'items-start' : 'items-end'}`}>
+                              <div className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${!msg.isAdmin ? 'bg-primary-600 text-white' : 'bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600'}`}>
+                                <p>{msg.text}</p>
+                                <span className="text-[10px] opacity-75 mt-1 block">{new Date(msg.createdAt).toLocaleString()}</span>
+                              </div>
+                            </div>
+                          ))
+                        ) : (
+                          <p className="text-xs text-gray-500 text-center">No messages yet. Ask a question or provide more details.</p>
+                        )}
+                      </div>
+                      
+                      <form onSubmit={(e) => handleSendMessage(e, request._id)} className="mt-3 flex gap-2">
+                        <input
+                          type="text"
+                          value={newMessages[request._id] || ''}
+                          onChange={(e) => setNewMessages({ ...newMessages, [request._id]: e.target.value })}
+                          placeholder="Type a message..."
+                          className="input-field text-sm py-2 flex-1"
+                        />
+                        <button type="submit" className="btn btn-primary px-4 py-2 text-sm">Send</button>
+                      </form>
                     </div>
 
                   </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { MapPin, CreditCard, Truck, Check, ShieldCheck, ArrowRight } from 'lucide-react';
 import api from '../utils/axios';
 import toast from 'react-hot-toast';
@@ -8,9 +8,14 @@ import { fetchCart, clearCartState } from '../redux/slices/cartSlice';
 
 const Checkout = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { items, subtotal, couponDiscount, couponCode, total } = useSelector((state) => state.cart);
+
+  const queryParams = new URLSearchParams(location.search);
+  const customRequestId = queryParams.get('customRequestId');
+  const [customRequest, setCustomRequest] = useState(null);
 
   const [addresses, setAddresses] = useState([]);
   const [selectedAddressId, setSelectedAddressId] = useState('');
@@ -64,9 +69,26 @@ const Checkout = () => {
       }
     };
 
+    const fetchCustomRequest = async () => {
+      try {
+        const res = await api.get('/custom-requests/my-requests');
+        const reqs = res.data?.data?.requests || res.data?.requests || [];
+        const req = reqs.find((r) => r._id === customRequestId);
+        if (req) setCustomRequest(req);
+      } catch (err) {
+        console.error('Failed to load custom request', err);
+      }
+    };
+
+    if (customRequestId) {
+      fetchCustomRequest();
+    } else {
+      dispatch(fetchCart());
+    }
+    
     fetchAddresses();
     fetchSettings();
-  }, [dispatch]);
+  }, [dispatch, customRequestId]);
 
   const handleAddressInputChange = (e) => {
     const { name, value } = e.target;
@@ -105,6 +127,7 @@ const Checkout = () => {
           shippingAddress,
           paymentMethod,
           customerNote,
+          customRequestId,
         });
 
         const data = res.data?.data || res.data || {};
@@ -162,6 +185,7 @@ const Checkout = () => {
           shippingAddress,
           paymentMethod,
           customerNote,
+          customRequestId,
         });
 
         const data = res.data?.data || res.data || {};
@@ -176,7 +200,7 @@ const Checkout = () => {
     }
   };
 
-  if (!items || items.length === 0) {
+  if (!customRequestId && (!items || items.length === 0)) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center p-4">
         <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
@@ -187,7 +211,10 @@ const Checkout = () => {
     );
   }
 
-  const discountedSubtotal = Math.max(0, subtotal - couponDiscount);
+  const currentSubtotal = customRequestId && customRequest ? customRequest.priceQuote : subtotal;
+  const currentCouponDiscount = customRequestId ? 0 : couponDiscount;
+  
+  const discountedSubtotal = Math.max(0, currentSubtotal - currentCouponDiscount);
   const baseShippingCost = settings?.shippingCost ?? 50;
   const freeShippingThreshold = settings?.freeShippingThreshold ?? 1000;
   const gstRate = settings?.gstPercentage ?? 0;
@@ -195,6 +222,17 @@ const Checkout = () => {
   const dynamicShippingCost = discountedSubtotal > freeShippingThreshold ? 0 : baseShippingCost;
   const dynamicGstAmount = discountedSubtotal * (gstRate / 100);
   const calculatedTotal = discountedSubtotal + dynamicShippingCost + dynamicGstAmount;
+
+  const displayItems = customRequestId && customRequest 
+    ? [{
+        _id: customRequest._id,
+        name: `Custom Commission #${customRequest._id.toString().slice(-6).toUpperCase()}`,
+        image: customRequest.referenceImages?.[0]?.url,
+        quantity: 1,
+        price: customRequest.priceQuote,
+        discountedPrice: customRequest.priceQuote
+      }]
+    : items;
 
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">
@@ -410,11 +448,11 @@ const Checkout = () => {
           <div className="space-y-6">
             <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm space-y-4">
               <h3 className="font-bold text-lg text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-3">
-                Order Items ({items.length})
+                Order Items ({displayItems.length})
               </h3>
 
               <div className="divide-y divide-gray-100 dark:divide-gray-800 max-h-60 overflow-y-auto pr-1">
-                {items.map((item) => (
+                {displayItems.map((item) => (
                   <div key={item._id} className="py-2.5 flex items-center gap-3">
                     <img src={item.image} alt={item.name} className="w-12 h-12 object-cover rounded-lg bg-gray-100" />
                     <div className="flex-1 min-w-0">
@@ -429,9 +467,9 @@ const Checkout = () => {
               <div className="pt-4 border-t border-gray-100 dark:border-gray-800 space-y-2 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">₹{subtotal.toFixed(2)}</span>
+                  <span className="font-semibold text-gray-900 dark:text-white">₹{currentSubtotal.toFixed(2)}</span>
                 </div>
-                {couponDiscount > 0 && (
+                {currentCouponDiscount > 0 && (
                   <div className="flex justify-between text-green-600 font-medium">
                     <span>Coupon ({couponCode})</span>
                     <span>-₹{couponDiscount.toFixed(2)}</span>

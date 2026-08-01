@@ -13,12 +13,14 @@
  */
 
 const Order = require('../models/Order');
-const Cart = require('../models/Cart');
 const Product = require('../models/Product');
+const Cart = require('../models/Cart');
 const SiteSettings = require('../models/SiteSettings');
+const CustomRequest = require('../models/CustomRequest');
 const asyncHandler = require('../utils/asyncHandler');
 const AppError = require('../utils/AppError');
 const { sendSuccess, paginate } = require('../utils/apiResponse');
+const { createNotification } = require('./notificationController');
 const { sendEmail, orderConfirmationTemplate } = require('../utils/sendEmail');
 
 /**
@@ -27,55 +29,80 @@ const { sendEmail, orderConfirmationTemplate } = require('../utils/sendEmail');
  * @access  Private
  */
 const createOrder = asyncHandler(async (req, res, next) => {
-  const { shippingAddress, paymentMethod, customerNote } = req.body;
+  const { shippingAddress, paymentMethod, customerNote, customRequestId } = req.body;
 
   if (!shippingAddress) {
     return next(new AppError('Shipping address is required.', 400));
   }
 
-  // 1. Get user cart
-  const cart = await Cart.findOne({ user: req.user._id }).populate('items.product');
+  let orderItems = [];
+  let subtotal = 0;
+  let taxAmount = 0;
+  let shippingCost = 50;
+  let totalAmount = 0;
+  let couponDiscount = 0;
+  let couponCode = null;
 
-  if (!cart || cart.items.length === 0) {
-    return next(new AppError('Your cart is empty.', 400));
-  }
+  if (customRequestId) {
+    const customRequest = await CustomRequest.findOne({ _id: customRequestId, user: req.user._id });
+    if (!customRequest) return next(new AppError('Custom request not found', 404));
+    if (customRequest.status !== 'accepted') return next(new AppError('Custom request must be accepted first', 400));
+    
+    orderItems = [{
+      name: `Custom Order #${customRequest._id.toString().slice(-6).toUpperCase()}`,
+      image: customRequest.referenceImages?.[0]?.url || '',
+      price: customRequest.priceQuote,
+      discountedPrice: customRequest.priceQuote,
+      quantity: 1,
+    }];
+    subtotal = customRequest.priceQuote;
+    totalAmount = subtotal + shippingCost;
+  } else {
+    // 1. Get user cart
+    const cart = await Cart.findOne({ user: req.user._id }).populate('items.product');
 
-  // 2. Validate stock for all items
-  for (const item of cart.items) {
-    if (!item.product) {
-       return next(new AppError('A product in your cart no longer exists.', 400));
+    if (!cart || cart.items.length === 0) {
+      return next(new AppError('Your cart is empty.', 400));
     }
-    if (item.product.stock < item.quantity) {
-      return next(new AppError(`Insufficient stock for ${item.name}.`, 400));
+
+    // 2. Validate stock for all items
+    for (const item of cart.items) {
+      if (!item.product) {
+        return next(new AppError('A product in your cart no longer exists.', 400));
+      }
+      if (item.product.stock < item.quantity) {
+        return next(new AppError(`Insufficient stock for ${item.name}.`, 400));
+      }
     }
+
+    // 3. Get Site Settings for Shipping and Tax
+    const settings = await SiteSettings.findOne() || {};
+    const baseShippingCost = settings.shippingCost ?? 50;
+    const freeShippingThreshold = settings.freeShippingThreshold ?? 1000;
+    const gstRate = settings.gstPercentage ?? 0;
+
+    // 4. Calculate Totals
+    subtotal = cart.subtotal;
+    couponDiscount = cart.couponDiscount || 0;
+    couponCode = cart.couponCode;
+    const discountedSubtotal = Math.max(0, subtotal - couponDiscount);
+    
+    shippingCost = discountedSubtotal > freeShippingThreshold ? 0 : baseShippingCost;
+    taxAmount = discountedSubtotal * (gstRate / 100); 
+    totalAmount = discountedSubtotal + shippingCost + taxAmount;
+
+    // 4. Create Order Items from Cart Snapshot
+    orderItems = cart.items.map(item => ({
+      product: item.product._id,
+      name: item.name,
+      image: item.image,
+      price: item.price,
+      discountedPrice: item.discountedPrice,
+      quantity: item.quantity,
+      variant: item.variant,
+      sku: item.product.sku,
+    }));
   }
-
-  // 3. Get Site Settings for Shipping and Tax
-  const settings = await SiteSettings.findOne() || {};
-  const baseShippingCost = settings.shippingCost ?? 50;
-  const freeShippingThreshold = settings.freeShippingThreshold ?? 1000;
-  const gstRate = settings.gstPercentage ?? 0;
-
-  // 4. Calculate Totals
-  const subtotal = cart.subtotal;
-  const couponDiscount = cart.couponDiscount || 0;
-  const discountedSubtotal = Math.max(0, subtotal - couponDiscount);
-  
-  const shippingCost = discountedSubtotal > freeShippingThreshold ? 0 : baseShippingCost;
-  const taxAmount = discountedSubtotal * (gstRate / 100); 
-  const totalAmount = discountedSubtotal + shippingCost + taxAmount;
-
-  // 4. Create Order Items from Cart Snapshot
-  const orderItems = cart.items.map(item => ({
-    product: item.product._id,
-    name: item.name,
-    image: item.image,
-    price: item.price,
-    discountedPrice: item.discountedPrice,
-    quantity: item.quantity,
-    variant: item.variant,
-    sku: item.product.sku,
-  }));
 
   // 5. Build Order Document
   const order = await Order.create({
@@ -85,7 +112,7 @@ const createOrder = asyncHandler(async (req, res, next) => {
     subtotal,
     shippingCost,
     couponDiscount,
-    couponCode: cart.couponCode,
+    couponCode: couponCode,
     taxAmount,
     totalAmount,
     payment: {
@@ -96,18 +123,33 @@ const createOrder = asyncHandler(async (req, res, next) => {
     status: 'pending',
   });
 
-  // 6. Update Product Stock and Sold Count
-  for (const item of cart.items) {
-    await Product.findByIdAndUpdate(item.product._id, {
-      $inc: { stock: -item.quantity, soldCount: item.quantity }
-    });
-  }
+  if (customRequestId) {
+    const customRequest = await CustomRequest.findById(customRequestId);
+    customRequest.status = 'ordered';
+    customRequest.orderId = order._id;
+    await customRequest.save();
 
-  // 7. Clear Cart
-  await Cart.findOneAndUpdate(
-    { user: req.user._id },
-    { items: [], coupon: null, couponCode: null, couponDiscount: 0 }
-  );
+    createNotification({
+      user: req.user._id,
+      title: 'Custom Order Placed',
+      message: `User has paid for custom request #${customRequest._id.toString().slice(-6).toUpperCase()}`,
+      type: 'order',
+      link: `/admin/orders/${order._id}`
+    });
+  } else {
+    // 6. Update Product Stock and Sold Count
+    for (const item of orderItems) {
+      await Product.findByIdAndUpdate(item.product, {
+        $inc: { stock: -item.quantity, soldCount: item.quantity }
+      });
+    }
+
+    // 7. Clear Cart
+    await Cart.findOneAndUpdate(
+      { user: req.user._id },
+      { items: [], coupon: null, couponCode: null, couponDiscount: 0 }
+    );
+  }
 
   // 8. Send Confirmation Email (Fire and forget)
   try {
@@ -338,6 +380,22 @@ const updateOrderStatus = asyncHandler(async (req, res, next) => {
   });
 
   await order.save();
+
+  // Trigger Notifications
+  let notifyMessage = '';
+  if (status === 'packed') notifyMessage = `Your order ${order.orderNumber} has been packed and is ready to ship.`;
+  if (status === 'shipped') notifyMessage = `Your order ${order.orderNumber} has been shipped! Tracking: ${trackingNumber || 'N/A'}`;
+  if (status === 'delivered') notifyMessage = `Your order ${order.orderNumber} has been delivered. Enjoy!`;
+  
+  if (notifyMessage) {
+    createNotification({
+      user: order.user,
+      title: 'Order Status Update',
+      message: notifyMessage,
+      type: 'order',
+      link: '/profile',
+    });
+  }
 
   sendSuccess(res, 200, 'Order status updated.', { order });
 });

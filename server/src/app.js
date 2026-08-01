@@ -47,6 +47,7 @@ const couponRoutes = require('./routes/couponRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const customRequestRoutes = require('./routes/customRequestRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 
 const app = express();
 
@@ -176,6 +177,7 @@ app.use('/api/v1/coupons', couponRoutes);
 app.use('/api/v1/payment', paymentRoutes);
 app.use('/api/v1/custom-requests', customRequestRoutes);
 app.use('/api/v1/settings', settingsRoutes);
+app.use('/api/v1/notifications', notificationRoutes);
 
 // ─── 12. 404 Handler (must be after all routes) ──────────────────────────────
 app.use(notFound);

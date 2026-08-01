@@ -63,6 +63,30 @@ export const acceptQuote = createAsyncThunk(
   }
 );
 
+export const addMessage = createAsyncThunk(
+  'customRequests/addMessage',
+  async ({ id, text }, { rejectWithValue }) => {
+    try {
+      const response = await api.post(`/custom-requests/${id}/messages`, { text });
+      return response.data?.customRequest || response.customRequest;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || 'Failed to add message');
+    }
+  }
+);
+
+export const deleteRequest = createAsyncThunk(
+  'customRequests/deleteRequest',
+  async (id, { rejectWithValue }) => {
+    try {
+      await api.delete(`/custom-requests/${id}`);
+      return id;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || 'Failed to delete request');
+    }
+  }
+);
+
 const customRequestSlice = createSlice({
   name: 'customRequests',
   initialState: {
@@ -126,6 +150,17 @@ const customRequestSlice = createSlice({
         if (index !== -1) {
           state.requests[index] = action.payload;
         }
+      })
+      // Add Message
+      .addCase(addMessage.fulfilled, (state, action) => {
+        const index = state.requests.findIndex(r => r._id === action.payload._id);
+        if (index !== -1) {
+          state.requests[index] = action.payload;
+        }
+      })
+      // Delete Request
+      .addCase(deleteRequest.fulfilled, (state, action) => {
+        state.requests = state.requests.filter(r => r._id !== action.payload);
       });
   },
 });

@@ -5,6 +5,8 @@ const {
   getAllRequests,
   updateRequestStatus,
   acceptQuote,
+  addMessage,
+  deleteRequest,
 } = require('../controllers/customRequestController');
 const { protect, authorize } = require('../middleware/auth');
 const { uploadReferenceImages, handleUpload } = require('../config/multer');
@@ -23,10 +25,12 @@ router.use(protect);
 router.post('/', uploadImages, createRequest);
 router.get('/my-requests', getMyRequests);
 router.post('/:id/accept', acceptQuote);
+router.post('/:id/messages', addMessage);
 
 // Admin routes
 router.use(authorize('admin'));
 router.get('/', getAllRequests);
 router.put('/:id', updateRequestStatus);
+router.delete('/:id', deleteRequest);
 
 module.exports = router;

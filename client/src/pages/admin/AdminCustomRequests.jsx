@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllRequests, updateRequestStatus } from '../../redux/slices/customRequestSlice';
+import { fetchAllRequests, updateRequestStatus, deleteRequest, addMessage } from '../../redux/slices/customRequestSlice';
 import { toast } from 'react-hot-toast';
 
 const AdminCustomRequests = () => {
@@ -8,6 +8,7 @@ const AdminCustomRequests = () => {
   const { requests, loading } = useSelector((state) => state.customRequests);
   const [selectedRequest, setSelectedRequest] = useState(null);
   const [quoteData, setQuoteData] = useState({ priceQuote: '', adminNotes: '', status: '' });
+  const [newMessage, setNewMessage] = useState('');
 
   useEffect(() => {
     dispatch(fetchAllRequests());
@@ -35,6 +36,35 @@ const AdminCustomRequests = () => {
       setSelectedRequest(null);
     } catch (error) {
       toast.error(error || 'Failed to update request');
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this request?')) return;
+    try {
+      await dispatch(deleteRequest(id)).unwrap();
+      toast.success('Request deleted successfully');
+      if (selectedRequest && selectedRequest._id === id) {
+        setSelectedRequest(null);
+      }
+    } catch (error) {
+      toast.error(error || 'Failed to delete request');
+    }
+  };
+
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+    if (!newMessage.trim()) return;
+    try {
+      await dispatch(addMessage({ id: selectedRequest._id, text: newMessage })).unwrap();
+      setNewMessage('');
+      toast.success('Message sent');
+      
+      // Update selectedRequest locally to show the new message immediately
+      const updatedReq = requests.find(r => r._id === selectedRequest._id);
+      if (updatedReq) setSelectedRequest(updatedReq);
+    } catch (error) {
+      toast.error(error || 'Failed to send message');
     }
   };
 
@@ -104,9 +134,15 @@ const AdminCustomRequests = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => handleOpenModal(request)}
-                        className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300"
+                        className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 mr-4"
                       >
                         Manage Quote
+                      </button>
+                      <button
+                        onClick={() => handleDelete(request._id)}
+                        className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300"
+                      >
+                        Delete
                       </button>
                     </td>
                   </tr>
@@ -143,6 +179,36 @@ const AdminCustomRequests = () => {
                 {selectedRequest.referenceImages?.map((img, idx) => (
                   <img key={idx} src={img.url} alt="Reference" className="h-24 object-cover rounded shadow-sm border border-gray-200" />
                 ))}
+              </div>
+
+              {/* Chat Thread */}
+              <div className="mb-6 bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 max-h-60 overflow-y-auto">
+                <h4 className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">Conversation</h4>
+                <div className="space-y-3">
+                  {selectedRequest.messages?.length > 0 ? (
+                    selectedRequest.messages.map((msg, idx) => (
+                      <div key={idx} className={`flex flex-col ${msg.isAdmin ? 'items-end' : 'items-start'}`}>
+                        <div className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${msg.isAdmin ? 'bg-primary-600 text-white' : 'bg-white dark:bg-gray-600 border border-gray-200 dark:border-gray-500'}`}>
+                          <p>{msg.text}</p>
+                          <span className="text-[10px] opacity-75 mt-1 block">{new Date(msg.createdAt).toLocaleString()}</span>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-xs text-gray-500 text-center">No messages yet.</p>
+                  )}
+                </div>
+                
+                <form onSubmit={handleSendMessage} className="mt-4 flex gap-2">
+                  <input
+                    type="text"
+                    value={newMessage}
+                    onChange={(e) => setNewMessage(e.target.value)}
+                    placeholder="Ask customer for details..."
+                    className="input-field text-sm py-1.5 flex-1"
+                  />
+                  <button type="submit" className="btn btn-primary px-3 py-1.5 text-sm">Send</button>
+                </form>
               </div>
 
               <form onSubmit={handleUpdate} className="space-y-4">

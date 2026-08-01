@@ -3445,3 +3445,151 @@ INSPECT: {
 }
 STACK: undefined
 
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: User belonging to this token no longer exists
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:140:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'User belonging to this token no longer exists'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: User belonging to this token no longer exists
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:140:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'User belonging to this token no longer exists'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: User belonging to this token no longer exists
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:140:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'User belonging to this token no longer exists'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: User belonging to this token no longer exists
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:140:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'User belonging to this token no longer exists'
+}
+STACK: undefined
+

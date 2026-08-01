@@ -10,11 +10,13 @@ import {
   X, 
   LogOut,
   LayoutDashboard,
-  Settings
+  Settings,
+  Bell
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { openCart } from '../../redux/slices/cartSlice';
 import { logout } from '../../redux/slices/authSlice';
+import { fetchNotifications, markAsRead, markAllAsRead, deleteNotification } from '../../redux/slices/notificationSlice';
 import toast from 'react-hot-toast';
 import api from '../../utils/axios';
 
@@ -27,6 +29,10 @@ const Navbar = () => {
   
   const { user, isAuthenticated } = useSelector((state) => state.auth);
   const { totalItems } = useSelector((state) => state.cart);
+  const { notifications } = useSelector((state) => state.notifications);
+  
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+  const unreadCount = notifications?.filter(n => !n.read)?.length || 0;
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -45,17 +51,41 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(fetchNotifications());
+    }
+  }, [dispatch, isAuthenticated]);
+
   // Close dropdowns when clicking outside
   useEffect(() => {
     const closeDropdowns = (e) => {
       if (isProfileDropdownOpen && !e.target.closest('.profile-dropdown-container')) {
         setIsProfileDropdownOpen(false);
       }
+      if (isNotificationsOpen && !e.target.closest('.notifications-dropdown-container')) {
+        setIsNotificationsOpen(false);
+      }
     };
     
     document.addEventListener('click', closeDropdowns);
     return () => document.removeEventListener('click', closeDropdowns);
-  }, [isProfileDropdownOpen]);
+  }, [isProfileDropdownOpen, isNotificationsOpen]);
+
+  const handleNotificationClick = (notification) => {
+    if (!notification.read) {
+      dispatch(markAsRead(notification._id));
+    }
+    setIsNotificationsOpen(false);
+    if (notification.link) {
+      navigate(notification.link);
+    }
+  };
+
+  const handleDeleteNotification = (e, id) => {
+    e.stopPropagation();
+    dispatch(deleteNotification(id));
+  };
 
   const handleLogout = async () => {
     try {
@@ -138,6 +168,79 @@ const Navbar = () => {
                 <Link to="/wishlist" className="hidden sm:block text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors">
                   <Heart size={20} />
                 </Link>
+              )}
+
+              {/* Notification Icon (Auth only) */}
+              {isAuthenticated && (
+                <div className="relative notifications-dropdown-container">
+                  <button 
+                    onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
+                    className="relative text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors mt-1"
+                  >
+                    <Bell size={20} />
+                    {unreadCount > 0 && (
+                      <span className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">
+                        {unreadCount > 9 ? '9+' : unreadCount}
+                      </span>
+                    )}
+                  </button>
+
+                  <AnimatePresence>
+                    {isNotificationsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.15 }}
+                        className="origin-top-right absolute right-0 mt-2 w-80 rounded-xl shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none overflow-hidden flex flex-col max-h-[80vh]"
+                      >
+                        <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+                          <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Notifications</h3>
+                          {unreadCount > 0 && (
+                            <button onClick={() => dispatch(markAllAsRead())} className="text-xs text-primary-600 hover:text-primary-700 font-medium">Mark all as read</button>
+                          )}
+                        </div>
+                        <div className="overflow-y-auto flex-1">
+                          {notifications?.length > 0 ? (
+                            <div className="divide-y divide-gray-100 dark:divide-gray-700">
+                              {notifications.map((notification) => (
+                                <div 
+                                  key={notification._id} 
+                                  onClick={() => handleNotificationClick(notification)}
+                                  className={`px-4 py-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors group relative ${!notification.read ? 'bg-primary-50/50 dark:bg-primary-900/10' : ''}`}
+                                >
+                                  <button
+                                    onClick={(e) => handleDeleteNotification(e, notification._id)}
+                                    className="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity rounded-full hover:bg-gray-200 dark:hover:bg-gray-600"
+                                    title="Remove notification"
+                                  >
+                                    <X size={14} />
+                                  </button>
+                                  <div className="flex justify-between items-start mb-1 pr-6">
+                                    <h4 className={`text-sm ${!notification.read ? 'font-semibold text-gray-900 dark:text-white' : 'font-medium text-gray-700 dark:text-gray-300'}`}>
+                                      {notification.title}
+                                    </h4>
+                                    {!notification.read && <span className="w-2 h-2 rounded-full bg-primary-600 mt-1.5 flex-shrink-0"></span>}
+                                  </div>
+                                  <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">
+                                    {notification.message}
+                                  </p>
+                                  <p className="text-[10px] text-gray-400 mt-1">
+                                    {new Date(notification.createdAt).toLocaleString()}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="px-4 py-8 text-center text-sm text-gray-500">
+                              No notifications yet
+                            </div>
+                          )}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               )}
 
               {/* Cart Icon */}

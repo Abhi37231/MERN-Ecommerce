@@ -40,6 +40,14 @@ const customRequestSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Order',
     },
+    messages: [
+      {
+        sender: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+        isAdmin: { type: Boolean, default: false },
+        text: { type: String, required: true },
+        createdAt: { type: Date, default: Date.now },
+      },
+    ],
   },
   {
     timestamps: true,
