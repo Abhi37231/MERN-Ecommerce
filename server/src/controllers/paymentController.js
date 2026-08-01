@@ -10,6 +10,7 @@ const Order = require('../models/Order');
 const Cart = require('../models/Cart');
 const Product = require('../models/Product');
 const Coupon = require('../models/Coupon');
+const SiteSettings = require('../models/SiteSettings');
 const asyncHandler = require('../utils/asyncHandler');
 const AppError = require('../utils/AppError');
 const { sendSuccess, paginate } = require('../utils/apiResponse');
@@ -43,12 +44,20 @@ const createRazorpayOrderCtrl = asyncHandler(async (req, res, next) => {
     }
   }
 
-  // 3. Calculate totals
+  // 3. Get Site Settings for Shipping and Tax
+  const settings = await SiteSettings.findOne() || {};
+  const baseShippingCost = settings.shippingCost ?? 50;
+  const freeShippingThreshold = settings.freeShippingThreshold ?? 1000;
+  const gstRate = settings.gstPercentage ?? 0;
+
+  // 4. Calculate totals
   const subtotal = cart.subtotal;
   const couponDiscount = cart.couponDiscount || 0;
-  const shippingCost = subtotal > 1000 ? 0 : 50;
-  const taxAmount = 0;
-  const totalAmount = subtotal - couponDiscount + shippingCost + taxAmount;
+  const discountedSubtotal = Math.max(0, subtotal - couponDiscount);
+
+  const shippingCost = discountedSubtotal > freeShippingThreshold ? 0 : baseShippingCost;
+  const taxAmount = discountedSubtotal * (gstRate / 100);
+  const totalAmount = discountedSubtotal + shippingCost + taxAmount;
 
   // 4. Validate minimum amount (Razorpay minimum is 100 paise = ₹1)
   if (totalAmount < 1) {

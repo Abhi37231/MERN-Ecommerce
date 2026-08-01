@@ -48,6 +48,18 @@ const siteSettingsSchema = new mongoose.Schema({
   footerText: {
     type: String,
     default: 'Thank you for shopping with us!'
+  },
+  shippingCost: {
+    type: Number,
+    default: 50
+  },
+  freeShippingThreshold: {
+    type: Number,
+    default: 1000
+  },
+  gstPercentage: {
+    type: Number,
+    default: 0
   }
 }, { timestamps: true });
 

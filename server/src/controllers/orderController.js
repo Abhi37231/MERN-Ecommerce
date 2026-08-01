@@ -15,6 +15,7 @@
 const Order = require('../models/Order');
 const Cart = require('../models/Cart');
 const Product = require('../models/Product');
+const SiteSettings = require('../models/SiteSettings');
 const asyncHandler = require('../utils/asyncHandler');
 const AppError = require('../utils/AppError');
 const { sendSuccess, paginate } = require('../utils/apiResponse');
@@ -49,12 +50,20 @@ const createOrder = asyncHandler(async (req, res, next) => {
     }
   }
 
-  // 3. Calculate Totals
+  // 3. Get Site Settings for Shipping and Tax
+  const settings = await SiteSettings.findOne() || {};
+  const baseShippingCost = settings.shippingCost ?? 50;
+  const freeShippingThreshold = settings.freeShippingThreshold ?? 1000;
+  const gstRate = settings.gstPercentage ?? 0;
+
+  // 4. Calculate Totals
   const subtotal = cart.subtotal;
   const couponDiscount = cart.couponDiscount || 0;
-  const shippingCost = subtotal > 1000 ? 0 : 50; // Free shipping over 1000
-  const taxAmount = 0; // Assuming tax is included in price for now
-  const totalAmount = subtotal - couponDiscount + shippingCost + taxAmount;
+  const discountedSubtotal = Math.max(0, subtotal - couponDiscount);
+  
+  const shippingCost = discountedSubtotal > freeShippingThreshold ? 0 : baseShippingCost;
+  const taxAmount = discountedSubtotal * (gstRate / 100); 
+  const totalAmount = discountedSubtotal + shippingCost + taxAmount;
 
   // 4. Create Order Items from Cart Snapshot
   const orderItems = cart.items.map(item => ({

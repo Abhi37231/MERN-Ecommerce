@@ -18,6 +18,7 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState('cod');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [customerNote, setCustomerNote] = useState('');
+  const [settings, setSettings] = useState(null);
 
   const [newAddress, setNewAddress] = useState({
     fullName: `${user?.firstName || ''} ${user?.lastName || ''}`.trim(),
@@ -50,7 +51,20 @@ const Checkout = () => {
         setIsAddingNewAddress(true);
       }
     };
+    
+    const fetchSettings = async () => {
+      try {
+        const res = await api.get('/settings');
+        if (res.data?.data?.settings) {
+          setSettings(res.data.data.settings);
+        }
+      } catch (err) {
+        console.error('Failed to load settings:', err);
+      }
+    };
+
     fetchAddresses();
+    fetchSettings();
   }, [dispatch]);
 
   const handleAddressInputChange = (e) => {
@@ -172,7 +186,14 @@ const Checkout = () => {
     );
   }
 
-  const calculatedTotal = subtotal - couponDiscount + (subtotal > 1000 ? 0 : 50);
+  const discountedSubtotal = Math.max(0, subtotal - couponDiscount);
+  const baseShippingCost = settings?.shippingCost ?? 50;
+  const freeShippingThreshold = settings?.freeShippingThreshold ?? 1000;
+  const gstRate = settings?.gstPercentage ?? 0;
+
+  const dynamicShippingCost = discountedSubtotal > freeShippingThreshold ? 0 : baseShippingCost;
+  const dynamicGstAmount = discountedSubtotal * (gstRate / 100);
+  const calculatedTotal = discountedSubtotal + dynamicShippingCost + dynamicGstAmount;
 
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">
@@ -417,8 +438,14 @@ const Checkout = () => {
                 )}
                 <div className="flex justify-between">
                   <span>Shipping</span>
-                  <span>{subtotal > 1000 ? 'FREE' : '₹50.00'}</span>
+                  <span>{dynamicShippingCost === 0 ? 'FREE' : `₹${dynamicShippingCost.toFixed(2)}`}</span>
                 </div>
+                {gstRate > 0 && (
+                  <div className="flex justify-between">
+                    <span>Estimated GST ({gstRate}%)</span>
+                    <span>₹{dynamicGstAmount.toFixed(2)}</span>
+                  </div>
+                )}
                 <div className="flex justify-between text-base font-bold text-gray-900 dark:text-white pt-2 border-t">
                   <span>Total Amount</span>
                   <span className="text-primary-600 dark:text-primary-400">₹{calculatedTotal.toFixed(2)}</span>

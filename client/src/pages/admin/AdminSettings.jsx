@@ -11,10 +11,12 @@ const AdminSettings = () => {
     storePhone: '',
     storeEmail: '',
     showLogo: true,
-    showQrCode: true,
     showBarcode: true,
     labelSize: '4x6',
-    footerText: ''
+    footerText: '',
+    shippingCost: 50,
+    freeShippingThreshold: 1000,
+    gstPercentage: 0
   });
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
@@ -102,6 +104,27 @@ const AdminSettings = () => {
             <div className="space-y-1 md:col-span-2">
               <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Store Physical Address</label>
               <textarea name="storeAddress" value={settings.storeAddress} onChange={handleChange} className="input-field h-24 resize-none" required></textarea>
+            </div>
+          </div>
+        </div>
+
+        {/* Checkout Settings Section */}
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+          <div className="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 flex items-center gap-2 font-bold text-gray-900 dark:text-white">
+            <Truck size={18} className="text-primary-600" /> Checkout Settings
+          </div>
+          <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Base Shipping Cost (₹)</label>
+              <input type="number" name="shippingCost" value={settings.shippingCost} onChange={handleChange} min="0" className="input-field" required />
+            </div>
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Free Shipping Threshold (₹)</label>
+              <input type="number" name="freeShippingThreshold" value={settings.freeShippingThreshold} onChange={handleChange} min="0" className="input-field" required />
+            </div>
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">GST Percentage (%)</label>
+              <input type="number" name="gstPercentage" value={settings.gstPercentage} onChange={handleChange} min="0" max="100" step="0.1" className="input-field" required />
             </div>
           </div>
         </div>

@@ -3233,3 +3233,47 @@ INSPECT: {
 }
 STACK: undefined
 
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
