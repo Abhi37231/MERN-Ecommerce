@@ -17,7 +17,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const res = await api.get('/settings');
+        const res = await api.get('/settings?t=' + new Date().getTime());
         if (res.data?.data?.settings) {
           setSettings(res.data.data.settings);
         }
