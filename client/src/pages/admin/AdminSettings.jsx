@@ -29,8 +29,9 @@ const AdminSettings = () => {
     try {
       setIsLoading(true);
       const res = await api.get('/settings');
-      if (res.data?.data?.settings) {
-        setSettings(res.data.data.settings);
+      const settingsData = res.data?.settings || res.settings;
+      if (settingsData) {
+        setSettings(settingsData);
       }
     } catch (err) {
       toast.error('Failed to load settings');

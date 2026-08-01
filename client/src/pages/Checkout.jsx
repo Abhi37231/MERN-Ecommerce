@@ -55,8 +55,9 @@ const Checkout = () => {
     const fetchSettings = async () => {
       try {
         const res = await api.get('/settings?t=' + new Date().getTime());
-        if (res.data?.data?.settings) {
-          setSettings(res.data.data.settings);
+        const settingsData = res.data?.settings || res.settings;
+        if (settingsData) {
+          setSettings(settingsData);
         }
       } catch (err) {
         console.error('Failed to load settings:', err);

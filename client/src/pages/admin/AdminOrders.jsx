@@ -43,7 +43,8 @@ const AdminOrders = () => {
   const fetchSettings = async () => {
     try {
       const res = await api.get('/settings');
-      setSiteSettings(res.data?.data?.settings);
+      const settingsData = res.data?.settings || res.settings;
+      setSiteSettings(settingsData);
     } catch (err) {
       console.error('Failed to fetch settings');
     }
