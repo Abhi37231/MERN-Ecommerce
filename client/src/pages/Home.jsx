@@ -117,7 +117,7 @@ const Home = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pt-4 pb-8">
             {isLoading ? (
               Array(4).fill(0).map((_, i) => (
                 <div key={i} className="skeleton h-64 rounded-2xl w-full"></div>
@@ -127,18 +127,30 @@ const Home = () => {
                 <Link
                   key={category._id}
                   to={`/products?category=${category._id}`}
-                  className="group relative h-64 rounded-2xl overflow-hidden shadow-sm"
+                  className="group relative block h-64"
                 >
-                  <img
-                    src={category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
-                    alt={category.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
-                    <h3 className="text-2xl font-serif text-white mb-2">{category.name}</h3>
-                    <span className="text-xs uppercase tracking-widest font-medium text-primary-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center">
-                      Discover <ArrowRight className="ml-2 w-4 h-4" />
-                    </span>
+                  {/* Back Image (Stacked Effect) */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-md transform translate-x-3 translate-y-3 rotate-3 transition-all duration-500 group-hover:translate-x-5 group-hover:translate-y-5 group-hover:rotate-6 z-0 bg-gray-200 dark:bg-gray-800">
+                    <img
+                      src={category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
+                      alt={`${category.name} background`}
+                      className="w-full h-full object-cover opacity-60 filter blur-[1px]"
+                    />
+                  </div>
+                  
+                  {/* Front Image */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-sm z-10 bg-gray-100 dark:bg-gray-800">
+                    <img
+                      src={category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
+                      alt={category.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8">
+                      <h3 className="text-xl md:text-2xl font-serif text-white mb-2">{category.name}</h3>
+                      <span className="text-xs uppercase tracking-widest font-medium text-primary-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center">
+                        Discover <ArrowRight className="ml-2 w-4 h-4" />
+                      </span>
+                    </div>
                   </div>
                 </Link>
               ))
