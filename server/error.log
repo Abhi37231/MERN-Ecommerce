@@ -4205,3 +4205,176 @@ INSPECT: {
 }
 STACK: undefined
 
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+MongoServerError: E11000 duplicate key error collection: test.orders index: orderNumber_1 dup key: { orderNumber: "SS-2026-000022" }
+    at InsertOneOperation.handleOk (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (D:\Project\MERN-Ecommerce\server\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:435:16)
+    at async maybeTracedSave (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:676:7)
+    at async model.create (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:2764:5)
+    at async D:\Project\MERN-Ecommerce\server\src\controllers\orderController.js:108:17
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: AppError: "SS-2026-000022" already exists for "orderNumber".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:71:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9 {
+  statusCode: 409,
+  status: 'fail',
+  isOperational: true
+}
+STACK: Error: "SS-2026-000022" already exists for "orderNumber".
+    at handleDuplicateKeyDB (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:17:10)
+    at errorHandler (D:\Project\MERN-Ecommerce\server\src\middleware\errorHandler.js:71:35)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle_error (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:326:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+

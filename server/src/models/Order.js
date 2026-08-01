@@ -182,20 +182,41 @@ orderSchema.index({ 'payment.status': 1 });
  * Format: SS-YYYY-XXXXXX (e.g. SS-2024-004821)
  * Uses the document count + 1 as the sequence.
  */
-orderSchema.pre('save', async function () {
-  if (!this.isNew) return;
+orderSchema.pre('save', async function (next) {
+  if (!this.isNew) return next();
 
-  const count = await this.constructor.countDocuments();
-  const year = new Date().getFullYear();
-  const sequence = String(count + 1).padStart(6, '0');
-  this.orderNumber = `SS-${year}-${sequence}`;
+  try {
+    const lastOrder = await this.constructor.findOne().sort({ createdAt: -1 });
+    let sequenceNum = 1;
+    
+    if (lastOrder && lastOrder.orderNumber) {
+      const parts = lastOrder.orderNumber.split('-');
+      if (parts.length === 3) {
+        const parsed = parseInt(parts[2], 10);
+        if (!isNaN(parsed)) {
+          sequenceNum = parsed + 1;
+        }
+      }
+    } else {
+      const count = await this.constructor.countDocuments();
+      sequenceNum = count + 1;
+    }
 
-  // Add initial status to history
-  this.statusHistory.push({
-    status: this.status,
-    comment: 'Order placed successfully',
-    updatedAt: new Date(),
-  });
+    const year = new Date().getFullYear();
+    const sequence = String(sequenceNum).padStart(6, '0');
+    this.orderNumber = `SS-${year}-${sequence}`;
+
+    // Add initial status to history
+    this.statusHistory.push({
+      status: this.status,
+      comment: 'Order placed successfully',
+      updatedAt: new Date(),
+    });
+    
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
 
 // ─── Virtuals ────────────────────────────────────────────────────────────────
