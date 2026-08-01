@@ -30,7 +30,8 @@ const getCategories = asyncHandler(async (req, res) => {
 
   const categoriesDocs = await Category.find(filter)
     .populate('children')
-    .sort({ sortOrder: 1, name: 1 });
+    .sort({ sortOrder: 1, name: 1 })
+    .lean();
 
   const categories = await Promise.all(
     categoriesDocs.map(async (cat) => {
@@ -39,7 +40,7 @@ const getCategories = asyncHandler(async (req, res) => {
         .select('images')
         .lean();
       return {
-        ...cat.toObject(),
+        ...cat,
         topProducts: topProductsDocs.map(p => p.images?.[0]?.url).filter(Boolean)
       };
     })
@@ -162,7 +163,7 @@ const deleteCategory = asyncHandler(async (req, res, next) => {
   );
 
   // Delete image from Cloudinary
-  if (category.image.publicId) {
+  if (category.image?.publicId) {
     await cloudinary.uploader.destroy(category.image.publicId);
   }
 

@@ -164,6 +164,14 @@ app.get('/api/v1/health', (req, res) => {
   });
 });
 
+// ─── 10.5. No-Cache Middleware for APIs ──────────────────────────────────────
+app.use('/api', (req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  next();
+});
+
 // ─── 11. API Routes ───────────────────────────────────────────────────────────
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/users', userRoutes);

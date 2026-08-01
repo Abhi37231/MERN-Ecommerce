@@ -432,11 +432,11 @@ const getOrderAnalytics = asyncHandler(async (req, res) => {
   const [todayOrdersCount, todayRevenueResult, stats, statusCounts] = await Promise.all([
     Order.countDocuments({ createdAt: { $gte: today } }),
     Order.aggregate([
-      { $match: { createdAt: { $gte: today }, status: { $ne: 'cancelled' } } },
+      { $match: { createdAt: { $gte: today }, status: 'delivered' } },
       { $group: { _id: null, total: { $sum: '$totalAmount' } } }
     ]),
     Order.aggregate([
-      { $match: { status: { $ne: 'cancelled' } } },
+      { $match: { status: 'delivered' } },
       { $group: { _id: null, avgAmount: { $avg: '$totalAmount' } } }
     ]),
     Order.aggregate([

@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
   server: {
@@ -18,5 +18,20 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'vendor';
+            if (id.includes('@reduxjs/toolkit') || id.includes('redux')) return 'redux';
+            if (id.includes('lucide-react') || id.includes('framer-motion') || id.includes('react-icons')) return 'ui';
+            return 'vendor-other';
+          }
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
   },
 })

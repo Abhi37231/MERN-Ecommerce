@@ -30,9 +30,14 @@ const { sendSuccess, paginate } = require('../utils/apiResponse');
 const buildProductFilter = (query) => {
   const filter = { isActive: true };
 
-  // Full-text search
+  // Full-text search / Autocomplete partial matching
   if (query.search) {
-    filter.$text = { $search: query.search };
+    filter.$or = [
+      { name: { $regex: query.search, $options: 'i' } },
+      { description: { $regex: query.search, $options: 'i' } },
+      { brand: { $regex: query.search, $options: 'i' } },
+      { tags: { $regex: query.search, $options: 'i' } }
+    ];
   }
 
   // Category filter
@@ -118,7 +123,7 @@ const getProducts = asyncHandler(async (req, res) => {
   }
 
   const [products, total] = await Promise.all([
-    query,
+    query.lean(),
     Product.countDocuments(filter),
   ]);
 
@@ -142,7 +147,8 @@ const getFeaturedProducts = asyncHandler(async (req, res) => {
     .populate('category', 'name slug')
     .select('-__v -description')
     .sort({ createdAt: -1 })
-    .limit(limit);
+    .limit(limit)
+    .lean();
 
   sendSuccess(res, 200, 'Featured products retrieved.', { products });
 });
@@ -158,7 +164,8 @@ const getTrendingProducts = asyncHandler(async (req, res) => {
     .populate('category', 'name slug')
     .select('-__v -description')
     .sort({ soldCount: -1 })
-    .limit(limit);
+    .limit(limit)
+    .lean();
 
   sendSuccess(res, 200, 'Trending products retrieved.', { products });
 });
@@ -174,7 +181,8 @@ const getNewArrivals = asyncHandler(async (req, res) => {
     .populate('category', 'name slug')
     .select('-__v -description')
     .sort({ createdAt: -1 })
-    .limit(limit);
+    .limit(limit)
+    .lean();
 
   sendSuccess(res, 200, 'New arrivals retrieved.', { products });
 });

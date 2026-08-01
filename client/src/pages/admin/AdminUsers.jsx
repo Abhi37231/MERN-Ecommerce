@@ -1,17 +1,37 @@
 import { useEffect, useState } from 'react';
-import { Users, Shield, UserCheck, Edit2, Trash2, X } from 'lucide-react';
+import { Users, Shield, UserCheck, Edit2, Trash2, X, Search } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import api from '../../utils/axios';
 import toast from 'react-hot-toast';
 
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const closeDropdowns = (e) => {
+      if (showSuggestions && !e.target.closest('.search-container')) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener('click', closeDropdowns);
+    return () => document.removeEventListener('click', closeDropdowns);
+  }, [showSuggestions]);
 
   // Edit Modal State
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
   const [editForm, setEditForm] = useState({ firstName: '', lastName: '', email: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const filteredUsers = users.filter(u => {
+    const term = searchTerm.toLowerCase();
+    const fullName = `${u.firstName} ${u.lastName}`.toLowerCase();
+    return fullName.includes(term) || u.email.toLowerCase().includes(term) || (u.phone && u.phone.includes(term));
+  });
 
   useEffect(() => {
     fetchUsers();
@@ -84,6 +104,55 @@ const AdminUsers = () => {
         <p className="text-sm text-gray-500">View registered users and manage permissions</p>
       </div>
 
+      {/* Filter / Search Bar */}
+      <div className="flex items-center gap-4 bg-white dark:bg-gray-900 p-4 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
+        <div className="relative flex-1 search-container">
+          <input
+            type="text"
+            placeholder="Search by name, email, or phone..."
+            value={searchTerm}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              setShowSuggestions(true);
+            }}
+            onFocus={() => setShowSuggestions(true)}
+            className="input-field pr-10 py-2 text-sm"
+          />
+          <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+
+          {/* Autocomplete Suggestions */}
+          <AnimatePresence>
+            {showSuggestions && searchTerm.trim() && filteredUsers.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden z-50 divide-y divide-gray-100 dark:divide-gray-700"
+              >
+                {filteredUsers.slice(0, 5).map((u) => (
+                  <div
+                    key={u._id}
+                    onClick={() => {
+                      openEditModal(u);
+                      setShowSuggestions(false);
+                    }}
+                    className="flex items-center gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer transition-colors"
+                  >
+                    <div className="h-8 w-8 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 flex items-center justify-center font-bold text-xs">
+                      {u.firstName.charAt(0)}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-900 dark:text-white">{u.firstName} {u.lastName}</h4>
+                      <p className="text-xs text-gray-500">{u.email}</p>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
       <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-gray-600 dark:text-gray-300">
@@ -100,10 +169,10 @@ const AdminUsers = () => {
             <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
               {isLoading ? (
                 <tr><td colSpan={6} className="p-8 text-center text-gray-400">Loading users...</td></tr>
-              ) : users.length === 0 ? (
+              ) : filteredUsers.length === 0 ? (
                 <tr><td colSpan={6} className="p-8 text-center text-gray-400">No users found</td></tr>
               ) : (
-                users.map((u) => (
+                filteredUsers.map((u) => (
                   <tr key={u._id} className="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
                     <td className="p-4 font-semibold text-gray-900 dark:text-white">{u.firstName} {u.lastName}</td>
                     <td className="p-4">{u.email}</td>

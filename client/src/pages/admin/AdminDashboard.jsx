@@ -25,7 +25,7 @@ const AdminDashboard = () => {
 
         const orders = ordersRes.data?.data?.orders || ordersRes.data?.orders || [];
         const totalSales = orders
-          .filter((o) => o.status !== 'cancelled')
+          .filter((o) => o.status === 'delivered')
           .reduce((sum, o) => sum + (o.totalAmount || 0), 0);
 
         setStats({

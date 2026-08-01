@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, Suspense, lazy } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { checkAuthStatus } from './redux/slices/authSlice';
 import { fetchCart } from './redux/slices/cartSlice';
 
@@ -13,55 +13,62 @@ import AdminLayout from './layouts/AdminLayout';
 import ProtectedRoute from './components/common/ProtectedRoute';
 
 // Public Pages
-import Home from './pages/Home';
-import Products from './pages/Products';
-import ProductDetail from './pages/ProductDetail';
-import Categories from './pages/Categories';
+const Home = lazy(() => import('./pages/Home'));
+const Products = lazy(() => import('./pages/Products'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const Categories = lazy(() => import('./pages/Categories'));
 
 // Auth Pages
-import Login from './pages/auth/Login';
-import Register from './pages/auth/Register';
-import ForgotPassword from './pages/auth/ForgotPassword';
-import ResetPassword from './pages/auth/ResetPassword';
+const Login = lazy(() => import('./pages/auth/Login'));
+const Register = lazy(() => import('./pages/auth/Register'));
+const ForgotPassword = lazy(() => import('./pages/auth/ForgotPassword'));
+const ResetPassword = lazy(() => import('./pages/auth/ResetPassword'));
 
 // User Protected Pages
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
-import OrderSuccess from './pages/OrderSuccess';
-import Orders from './pages/Orders';
-import OrderDetail from './pages/OrderDetail';
-import Wishlist from './pages/Wishlist';
-import Profile from './pages/Profile';
-import CustomRequest from './pages/CustomRequest';
-import MyCustomRequests from './pages/MyCustomRequests';
+const Cart = lazy(() => import('./pages/Cart'));
+const Checkout = lazy(() => import('./pages/Checkout'));
+const OrderSuccess = lazy(() => import('./pages/OrderSuccess'));
+const Orders = lazy(() => import('./pages/Orders'));
+const OrderDetail = lazy(() => import('./pages/OrderDetail'));
+const Wishlist = lazy(() => import('./pages/Wishlist'));
+const Profile = lazy(() => import('./pages/Profile'));
+const CustomRequest = lazy(() => import('./pages/CustomRequest'));
+const MyCustomRequests = lazy(() => import('./pages/MyCustomRequests'));
 
 // Admin Pages
-import AdminDashboard from './pages/admin/AdminDashboard';
-import AdminProducts from './pages/admin/AdminProducts';
-import AdminCategories from './pages/admin/AdminCategories';
-import AdminOrders from './pages/admin/AdminOrders';
-import AdminUsers from './pages/admin/AdminUsers';
-import AdminReviews from './pages/admin/AdminReviews';
-import AdminCoupons from './pages/admin/AdminCoupons';
-import AdminSettings from './pages/admin/AdminSettings';
-import AdminCustomRequests from './pages/admin/AdminCustomRequests';
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const AdminProducts = lazy(() => import('./pages/admin/AdminProducts'));
+const AdminCategories = lazy(() => import('./pages/admin/AdminCategories'));
+const AdminOrders = lazy(() => import('./pages/admin/AdminOrders'));
+const AdminUsers = lazy(() => import('./pages/admin/AdminUsers'));
+const AdminReviews = lazy(() => import('./pages/admin/AdminReviews'));
+const AdminCoupons = lazy(() => import('./pages/admin/AdminCoupons'));
+const AdminSettings = lazy(() => import('./pages/admin/AdminSettings'));
+const AdminCustomRequests = lazy(() => import('./pages/admin/AdminCustomRequests'));
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-dark-deep">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-600"></div>
+  </div>
+);
 
 function App() {
   const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(checkAuthStatus())
-      .unwrap()
-      .then(() => {
-        dispatch(fetchCart());
-      })
-      .catch(() => {
-        // Guest user, no session active
-      });
+    dispatch(checkAuthStatus());
   }, [dispatch]);
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(fetchCart());
+    }
+  }, [isAuthenticated, dispatch]);
+
   return (
-    <Routes>
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
       {/* Auth Pages */}
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />} />
@@ -122,7 +129,8 @@ function App() {
           </div>
         }
       />
-    </Routes>
+      </Routes>
+    </Suspense>
   );
 }
 

@@ -26,6 +26,8 @@ const Navbar = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   
   const { user, isAuthenticated } = useSelector((state) => state.auth);
   const { totalItems } = useSelector((state) => state.cart);
@@ -66,11 +68,37 @@ const Navbar = () => {
       if (isNotificationsOpen && !e.target.closest('.notifications-dropdown-container')) {
         setIsNotificationsOpen(false);
       }
+      if (showSuggestions && !e.target.closest('.search-container')) {
+        setShowSuggestions(false);
+      }
     };
     
     document.addEventListener('click', closeDropdowns);
     return () => document.removeEventListener('click', closeDropdowns);
-  }, [isProfileDropdownOpen, isNotificationsOpen]);
+  }, [isProfileDropdownOpen, isNotificationsOpen, showSuggestions]);
+
+  // Handle search suggestions
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+
+    const delayDebounceFn = setTimeout(async () => {
+      try {
+        const res = await api.get(`/products?search=${encodeURIComponent(searchQuery.trim())}&limit=5`);
+        const data = res.data?.data || res.data || {};
+        const products = data.products || res.data?.products || [];
+        setSuggestions(products);
+        setShowSuggestions(true);
+      } catch (err) {
+        console.error(err);
+      }
+    }, 300);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [searchQuery]);
 
   const handleNotificationClick = (notification) => {
     if (!notification.read) {
@@ -367,11 +395,12 @@ const Navbar = () => {
               className="border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-deep overflow-hidden"
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <form onSubmit={handleSearch} className="relative w-full max-w-2xl mx-auto">
+                <form onSubmit={handleSearch} className="relative w-full max-w-2xl mx-auto search-container">
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    onFocus={() => { if(searchQuery.trim()) setShowSuggestions(true); }}
                     placeholder="Search for products..."
                     className="w-full pl-4 pr-12 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-900 dark:text-white"
                     autoFocus
@@ -382,6 +411,39 @@ const Navbar = () => {
                   >
                     <Search size={20} />
                   </button>
+
+                  {/* Dropdown for suggestions */}
+                  <AnimatePresence>
+                    {showSuggestions && suggestions.length > 0 && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden z-50 divide-y divide-gray-100 dark:divide-gray-700"
+                      >
+                        {suggestions.map((product) => (
+                          <div 
+                            key={product._id} 
+                            onClick={() => {
+                              navigate(`/products/${product.slug}`);
+                              setIsSearchOpen(false);
+                              setSearchQuery('');
+                              setShowSuggestions(false);
+                            }}
+                            className="flex items-center gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer transition-colors"
+                          >
+                            {product.images?.[0]?.url && (
+                              <img src={product.images[0].url} alt={product.name} className="w-10 h-10 object-cover rounded-md" />
+                            )}
+                            <div className="flex-1">
+                              <h4 className="text-sm font-medium text-gray-900 dark:text-white line-clamp-1">{product.name}</h4>
+                              <p className="text-xs text-primary-600 font-semibold">₹{product.discountedPrice || product.price}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </form>
               </div>
             </motion.div>

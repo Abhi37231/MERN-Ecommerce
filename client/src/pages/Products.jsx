@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, Filter, Star, ShoppingBag, X, ChevronDown, 
   RotateCcw, Heart, Check, ArrowUpDown, ChevronLeft, ChevronRight 
@@ -11,6 +12,7 @@ import { addToCart, openCart } from '../redux/slices/cartSlice';
 import { toggleWishlist, fetchWishlist } from '../redux/slices/wishlistSlice';
 
 const Products = () => {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -24,6 +26,40 @@ const Products = () => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [searchInput, setSearchInput] = useState(searchParams.get('search') || '');
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const closeDropdowns = (e) => {
+      if (showSuggestions && !e.target.closest('.search-container')) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener('click', closeDropdowns);
+    return () => document.removeEventListener('click', closeDropdowns);
+  }, [showSuggestions]);
+
+  // Fetch search suggestions
+  useEffect(() => {
+    if (!searchInput.trim()) {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+    const delayDebounceFn = setTimeout(async () => {
+      try {
+        const res = await api.get(`/products?search=${encodeURIComponent(searchInput.trim())}&limit=5`);
+        const data = res.data?.data || res.data || {};
+        const productList = data.products || res.data?.products || [];
+        setSuggestions(productList);
+        setShowSuggestions(true);
+      } catch (err) {
+        console.error(err);
+      }
+    }, 300);
+    return () => clearTimeout(delayDebounceFn);
+  }, [searchInput]);
 
   const [filters, setFilters] = useState({
     search: searchParams.get('search') || '',
@@ -164,17 +200,49 @@ const Products = () => {
 
           <div className="flex flex-wrap items-center gap-3">
             {/* Search Bar */}
-            <form onSubmit={handleSearchSubmit} className="relative flex-1 sm:w-72">
+            <form onSubmit={handleSearchSubmit} className="relative flex-1 sm:w-72 search-container">
               <input
                 type="text"
                 placeholder="Search products..."
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
+                onFocus={() => { if(searchInput.trim()) setShowSuggestions(true); }}
                 className="input-field pr-10 py-2"
               />
-              <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary-600">
+              <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary-600 z-10">
                 <Search size={18} />
               </button>
+
+              {/* Dropdown for suggestions */}
+              <AnimatePresence>
+                {showSuggestions && suggestions.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden z-[100] divide-y divide-gray-100 dark:divide-gray-700"
+                  >
+                    {suggestions.map((product) => (
+                      <div 
+                        key={product._id} 
+                        onClick={() => {
+                          navigate(`/products/${product.slug}`);
+                          setShowSuggestions(false);
+                        }}
+                        className="flex items-center gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer transition-colors"
+                      >
+                        {product.images?.[0]?.url && (
+                          <img src={product.images[0].url} alt={product.name} className="w-10 h-10 object-cover rounded-md" />
+                        )}
+                        <div className="flex-1">
+                          <h4 className="text-sm font-medium text-gray-900 dark:text-white line-clamp-1">{product.name}</h4>
+                          <p className="text-xs text-primary-600 font-semibold">₹{product.discountedPrice || product.price}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </form>
 
             {/* Mobile Filter Toggle */}

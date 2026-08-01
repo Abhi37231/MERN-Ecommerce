@@ -49,15 +49,12 @@ const sendErrorProd = (err, res) => {
     });
   }
 
-  console.log("\n========== SERVER ERROR ==========");
-  console.error(err);
-  console.log("==================================\n");
   require('fs').appendFileSync('error.log', require('util').inspect(err) + '\n\n' + err.stack + '\n');
 
   return res.status(500).json({
     success: false,
     status: 'error',
-    message: err.message || "Internal Server Error",
+    message: "Internal Server Error",
   });
 };
 

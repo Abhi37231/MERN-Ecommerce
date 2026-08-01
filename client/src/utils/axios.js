@@ -55,9 +55,9 @@ api.interceptors.response.use(
       }
     }
 
-    // Pass the formatted error response to the caller
-    const errorMessage = error.response?.data?.message || 'Something went wrong';
-    return Promise.reject(new Error(errorMessage));
+    // Ensure both error.message and error.response.data.message work across the app
+    error.message = error.response?.data?.message || error.message || 'Something went wrong';
+    return Promise.reject(error);
   }
 );
 
