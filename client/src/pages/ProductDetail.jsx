@@ -286,12 +286,12 @@ const ProductDetail = () => {
                     />
                   ))}
                   <span className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {product.ratingsAverage} ({product.ratingsQuantity || 0} reviews)
+                    {product.ratingsAverage} ({product.ratingsCount || 0} reviews)
                   </span>
                 </div>
                 <span className="text-gray-300 dark:text-gray-700">|</span>
                 <span className="text-sm text-gray-600 dark:text-gray-400">
-                  <span className="font-semibold text-green-600 dark:text-green-400">{product.soldCount || 0}</span> sold
+                  <span className="font-semibold text-green-600 dark:text-green-400">{Math.max(0, product.soldCount || 0)}</span> sold
                 </span>
               </div>
             </div>
@@ -513,7 +513,7 @@ const ProductDetail = () => {
       )}
 
       {/* Customer Reviews Section */}
-      <ProductReviews reviews={reviews} totalReviews={product.ratingsQuantity || reviews.length} />
+      <ProductReviews reviews={reviews} totalReviews={product.ratingsCount || reviews.length} />
     </div>
   );
 };

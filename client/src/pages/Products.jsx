@@ -478,7 +478,7 @@ const Products = () => {
                                 {prod.ratingsAverage || 4.5}
                               </span>
                               <span className="text-xs text-gray-400">
-                                ({prod.ratingsQuantity || 0})
+                                ({prod.ratingsCount || 0})
                               </span>
                             </div>
                           </div>
