@@ -132,9 +132,9 @@ const createOrder = asyncHandler(async (req, res, next) => {
     createNotification({
       user: req.user._id,
       title: 'Custom Order Placed',
-      message: `User has paid for custom request #${customRequest._id.toString().slice(-6).toUpperCase()}`,
+      message: `You have successfully placed an order for custom request #${customRequest._id.toString().slice(-6).toUpperCase()}`,
       type: 'order',
-      link: `/admin/orders/${order._id}`
+      link: `/orders/${order._id}`
     });
   } else {
     // 6. Update Product Stock and Sold Count
@@ -399,7 +399,7 @@ const updateOrderStatus = asyncHandler(async (req, res, next) => {
       title: 'Order Status Update',
       message: notifyMessage,
       type: 'order',
-      link: '/profile',
+      link: `/orders/${order._id}`
     });
   }
 
