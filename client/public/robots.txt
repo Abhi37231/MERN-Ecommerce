@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mern-ecommerce-eta-steel.vercel.app/sitemap.xml

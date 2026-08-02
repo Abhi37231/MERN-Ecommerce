@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, ArrowRight } from 'lucide-react';
 import api from '../utils/axios';
+import SEO from '../components/common/SEO';
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -36,6 +37,11 @@ const Categories = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">
+      <SEO 
+        title="Categories" 
+        description="Browse our diverse categories of handmade products and custom creations." 
+        keywords="categories, shop by category, handmade products categories"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2 flex items-center gap-3">
           <Grid className="text-primary-600" /> All Categories
@@ -57,20 +63,20 @@ const Categories = () => {
                     <>
                       {cat.topProducts[2] && (
                         <div className="absolute -bottom-1 -left-2 w-12 h-12 rounded-lg border-2 border-white dark:border-gray-900 overflow-hidden shadow-sm z-10 -rotate-12 bg-gray-100">
-                          <img src={cat.topProducts[2]} className="w-full h-full object-cover" />
+                          <img src={cat.topProducts[2]} className="w-full h-full object-cover" loading="lazy" />
                         </div>
                       )}
                       {cat.topProducts[1] && (
                         <div className="absolute -top-1 -right-2 w-14 h-14 rounded-lg border-2 border-white dark:border-gray-900 overflow-hidden shadow-sm z-20 rotate-12 bg-gray-100">
-                          <img src={cat.topProducts[1]} className="w-full h-full object-cover" />
+                          <img src={cat.topProducts[1]} className="w-full h-full object-cover" loading="lazy" />
                         </div>
                       )}
                       <div className="absolute inset-0 m-auto w-16 h-16 rounded-lg border-2 border-white dark:border-gray-900 overflow-hidden shadow-md z-30 bg-white">
-                        <img src={cat.topProducts[0]} className="w-full h-full object-cover" />
+                        <img src={cat.topProducts[0]} className="w-full h-full object-cover" loading="lazy" />
                       </div>
                     </>
                   ) : cat.image?.url ? (
-                    <img src={cat.image.url} alt={cat.name} className="w-full h-full object-cover rounded-xl shadow-sm" />
+                    <img src={cat.image.url} alt={cat.name} className="w-full h-full object-cover rounded-xl shadow-sm" loading="lazy" />
                   ) : (
                     <div className="w-full h-full rounded-xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center text-primary-600 dark:text-primary-400">
                       <Grid size={28} />

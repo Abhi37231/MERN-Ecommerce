@@ -583,7 +583,7 @@ const AdminOrders = () => {
                             <div key={i} className="p-4 flex justify-between items-center">
                                 <div className="flex gap-4 items-center">
                                     <div className="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden shrink-0 border border-gray-200">
-                                        <img src={item.image || 'https://via.placeholder.com/48'} alt={item.name} className="w-full h-full object-cover" />
+                                        <img src={item.image || 'https://placehold.co/48'} alt={item.name} className="w-full h-full object-cover" />
                                     </div>
                                     <div>
                                         <p className="font-semibold text-sm line-clamp-1">{item.name}</p>

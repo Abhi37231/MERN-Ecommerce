@@ -6,6 +6,7 @@ import { Eye, EyeOff, Mail, Lock, User, AlertCircle, ArrowRight, Phone } from 'l
 import { loginStart, loginSuccess, loginFailure } from '../../redux/slices/authSlice';
 import api from '../../utils/axios';
 import toast from 'react-hot-toast';
+import SEO from '../../components/common/SEO';
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,6 +32,11 @@ const Register = () => {
 
   return (
     <div>
+      <SEO 
+        title="Register" 
+        description="Create an account on Craftora to start shopping for unique handmade gifts." 
+        keywords="register, sign up, create account craftora"
+      />
       <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">Create an account</h2>
       <p className="text-gray-600 dark:text-gray-400 mb-8">
         Join Craftora today for exclusive deals.

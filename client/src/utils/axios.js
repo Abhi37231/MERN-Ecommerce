@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { store } from '../redux/store';
+import { logout } from '../redux/slices/authSlice';
 
 // Create an Axios instance with base configuration
 const api = axios.create({
@@ -50,7 +52,8 @@ api.interceptors.response.use(
         return api(originalRequest);
       } catch (refreshError) {
         // Refresh token failed (e.g., expired or invalid)
-        // We should dispatch a logout action here (handled via Redux/events later)
+        // Dispatch logout action to clear Redux state
+        store.dispatch(logout());
         return Promise.reject(refreshError);
       }
     }

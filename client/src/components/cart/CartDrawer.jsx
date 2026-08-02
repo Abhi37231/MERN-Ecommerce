@@ -123,7 +123,7 @@ const CartDrawer = () => {
                     {/* Item Image */}
                     <div className="w-20 h-24 bg-gray-100 dark:bg-gray-800 rounded-md overflow-hidden flex-shrink-0">
                       <img
-                        src={item.image || 'https://via.placeholder.com/150'}
+                        src={item.image || 'https://placehold.co/150'}
                         alt={item.name}
                         className="w-full h-full object-cover"
                       />

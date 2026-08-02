@@ -8,6 +8,7 @@ import { openCart } from '../redux/slices/cartSlice';
 import { addToCart } from '../redux/slices/cartSlice';
 import { toggleWishlist } from '../redux/slices/wishlistSlice';
 import ProductReviews from '../components/reviews/ProductReviews';
+import SEO from '../components/common/SEO';
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -163,8 +164,44 @@ const ProductDetail = () => {
   const discountAmount = product.price * (product.discountPercentage / 100);
   const currentPrice = product.price - discountAmount;
 
+  const schema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.name,
+    "image": product.images?.map(img => img.url) || [],
+    "description": product.shortDescription || product.description,
+    "sku": product._id,
+    "brand": {
+      "@type": "Brand",
+      "name": product.brand || "Craftora"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://mern-ecommerce-eta-steel.vercel.app/products/${product.slug}`,
+      "priceCurrency": "INR",
+      "price": currentPrice.toFixed(2),
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+    },
+    ...(product.ratingsCount > 0 && {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": product.ratingsAverage,
+        "reviewCount": product.ratingsCount
+      }
+    })
+  };
+
   return (
     <div className="bg-white dark:bg-dark-deep pb-16">
+      <SEO 
+        title={product.name}
+        description={product.shortDescription || product.description?.substring(0, 160)}
+        keywords={`${product.name}, ${product.brand || 'handmade'}, buy ${product.name}`}
+        type="product"
+        image={activeImage}
+        schema={schema}
+      />
 
       {/* Breadcrumbs */}
       <div className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3">
@@ -196,7 +233,7 @@ const ProductDetail = () => {
               onMouseLeave={() => setIsHoveringImage(false)}
             >
               <img
-                src={activeImage || 'https://via.placeholder.com/600'}
+                src={activeImage || 'https://placehold.co/600'}
                 alt={product.name}
                 className="w-full h-full object-cover object-center transition-transform duration-500 ease-in-out"
               />
@@ -257,7 +294,7 @@ const ProductDetail = () => {
                         : 'border-transparent hover:border-gray-300 dark:hover:border-gray-600 opacity-70 hover:opacity-100'
                       }`}
                   >
-                    <img src={img.url} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                    <img src={img.url} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" loading="lazy" />
                   </button>
                 ))}
               </div>
@@ -496,10 +533,10 @@ const ProductDetail = () => {
                 >
                   <div className="aspect-square bg-gray-100 dark:bg-gray-900">
                     <img
-                      src={rp.images?.[0]?.url || 'https://via.placeholder.com/400'}
+                      src={rp.images?.[0]?.url || 'https://placehold.co/400'}
                       alt={rp.name}
                       className="w-full h-full object-cover"
-                    />
+                    loading="lazy" />
                   </div>
                   <div className="p-4">
                     <h3 className="text-sm font-medium text-gray-900 dark:text-white line-clamp-1 mb-1">{rp.name}</h3>

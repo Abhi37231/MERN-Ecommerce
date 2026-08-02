@@ -6,6 +6,7 @@ import { Eye, EyeOff, Mail, Lock, AlertCircle, ArrowRight } from 'lucide-react';
 import { loginStart, loginSuccess, loginFailure } from '../../redux/slices/authSlice';
 import api from '../../utils/axios';
 import toast from 'react-hot-toast';
+import SEO from '../../components/common/SEO';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,6 +37,11 @@ const Login = () => {
 
   return (
     <div>
+      <SEO 
+        title="Login" 
+        description="Sign in to your Craftora account to view orders and wishlist." 
+        keywords="login, sign in, craftora account"
+      />
       <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">Welcome back</h2>
       <p className="text-gray-600 dark:text-gray-400 mb-8">
         Please enter your details to sign in.

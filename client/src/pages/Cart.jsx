@@ -6,6 +6,7 @@ import { updateCartItem, removeFromCart, clearCart, applyCoupon, removeCoupon } 
 import toast from 'react-hot-toast';
 import api from '../utils/axios';
 import { useEffect } from 'react';
+import SEO from '../components/common/SEO';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -66,6 +67,7 @@ const Cart = () => {
   if (!items || items.length === 0) {
     return (
       <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-16 flex items-center justify-center">
+        <SEO title="Cart" noindex={true} />
         <div className="max-w-md mx-auto px-4 text-center">
           <div className="w-24 h-24 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
             <ShoppingBag size={40} />
@@ -94,6 +96,7 @@ const Cart = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">
+      <SEO title="Cart" noindex={true} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <button 
           onClick={() => navigate(-1)} 
@@ -123,7 +126,7 @@ const Cart = () => {
                 {items.map((item) => (
                   <div key={item._id} className="py-4 flex gap-4 items-center">
                     <img
-                      src={item.image || 'https://via.placeholder.com/150'}
+                      src={item.image || 'https://placehold.co/150'}
                       alt={item.name}
                       className="w-20 h-24 object-cover rounded-xl bg-gray-100 dark:bg-gray-800 flex-shrink-0"
                     />

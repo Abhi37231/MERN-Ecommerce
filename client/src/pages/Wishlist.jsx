@@ -5,6 +5,7 @@ import { Heart, Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
 import { fetchWishlist, removeFromWishlist } from '../redux/slices/wishlistSlice';
 import { addToCart, openCart } from '../redux/slices/cartSlice';
 import toast from 'react-hot-toast';
+import SEO from '../components/common/SEO';
 
 const Wishlist = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const Wishlist = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">
+      <SEO title="Wishlist" noindex={true} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -79,7 +81,7 @@ const Wishlist = () => {
                 <div className="relative aspect-square bg-gray-100 dark:bg-gray-800 overflow-hidden">
                   <Link to={`/products/${prod.slug}`}>
                     <img
-                      src={prod.images?.[0]?.url || 'https://via.placeholder.com/400'}
+                      src={prod.images?.[0]?.url || 'https://placehold.co/400'}
                       alt={prod.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />

@@ -4,7 +4,31 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'sitemap-middleware',
+      configureServer(server) {
+        server.middlewares.use('/sitemap.xml', async (req, res, next) => {
+          try {
+            // Use Vite's ssrLoadModule to execute the Vercel function
+            const module = await server.ssrLoadModule('/api/sitemap.js');
+            const handler = module.default;
+            
+            // Polyfill Express/Vercel response methods for the native Node.js HTTP response
+            res.status = (code) => { res.statusCode = code; return res; };
+            res.send = (data) => { res.end(data); };
+            res.json = (data) => { res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(data)); };
+            
+            await handler(req, res);
+          } catch (error) {
+            console.error('Sitemap middleware error:', error);
+            next(error);
+          }
+        });
+      }
+    }
+  ],
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),

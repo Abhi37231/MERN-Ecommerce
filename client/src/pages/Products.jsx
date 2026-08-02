@@ -10,6 +10,7 @@ import api from '../utils/axios';
 import toast from 'react-hot-toast';
 import { addToCart, openCart } from '../redux/slices/cartSlice';
 import { toggleWishlist, fetchWishlist } from '../redux/slices/wishlistSlice';
+import SEO from '../components/common/SEO';
 
 const Products = () => {
   const navigate = useNavigate();
@@ -187,6 +188,11 @@ const Products = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-8">
+      <SEO 
+        title="Products" 
+        description="Browse our curated collection of premium handmade products." 
+        keywords="handmade products, customized gifts, shop, craftora products"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header & Search */}
@@ -232,7 +238,7 @@ const Products = () => {
                         className="flex items-center gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer transition-colors"
                       >
                         {product.images?.[0]?.url && (
-                          <img src={product.images[0].url} alt={product.name} className="w-10 h-10 object-cover rounded-md" />
+                          <img src={product.images[0].url} alt={product.name} className="w-10 h-10 object-cover rounded-md" loading="lazy" />
                         )}
                         <div className="flex-1">
                           <h4 className="text-sm font-medium text-gray-900 dark:text-white line-clamp-1">{product.name}</h4>
@@ -426,10 +432,10 @@ const Products = () => {
                         <div className="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
                           <Link to={`/products/${prod.slug}`}>
                             <img
-                              src={prod.images?.[0]?.url || 'https://via.placeholder.com/400'}
+                              src={prod.images?.[0]?.url || 'https://placehold.co/400'}
                               alt={prod.name}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
+                            loading="lazy" />
                           </Link>
 
                           {/* Badges */}

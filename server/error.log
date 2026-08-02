@@ -5136,3 +5136,616 @@ INSPECT: {
 }
 STACK: undefined
 
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: CORS: origin "http://localhost:5174" is not allowed.
+    at origin (D:\Project\MERN-Ecommerce\server\src\app.js:82:18)
+    at D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Project\MERN-Ecommerce\server\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (D:\Project\MERN-Ecommerce\server\node_modules\helmet\index.cjs:558:6)
+
+TYPE: object
+INSPECT: {
+  statusCode: 500,
+  status: 'error',
+  message: 'CORS: origin "http://localhost:5174" is not allowed.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Refresh token required
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:134:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Refresh token required'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Refresh token required
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:134:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Refresh token required'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /favicon.ico
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at logger (D:\Project\MERN-Ecommerce\server\node_modules\morgan\index.js:170:5)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /favicon.ico'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Item not found in cart.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:116:26
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Item not found in cart.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+VersionError: No matching document found for id "6a6d5bccd05f8eb05d94ecc1" version 41 modifiedPaths "items"
+    at generateVersionError (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:597:10)
+    at model.save (D:\Project\MERN-Ecommerce\server\node_modules\mongoose\lib\model.js:659:30)
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:148:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  version: 41,
+  modifiedPaths: [ 'items' ],
+  statusCode: 500,
+  status: 'error',
+  message: 'No matching document found for id "6a6d5bccd05f8eb05d94ecc1" version 41 modifiedPaths "items"'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 1 units available.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:121:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 1 units available.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 1 units available.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:121:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 1 units available.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/auth/me
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\src\app.js:174:3
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/auth/me'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Route not found: GET /api/auth/me
+    at notFound (D:\Project\MERN-Ecommerce\server\src\middleware\notFound.js:13:8)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at D:\Project\MERN-Ecommerce\server\src\app.js:174:3
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:328:13)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:286:9
+
+TYPE: object
+INSPECT: {
+  statusCode: 404,
+  status: 'fail',
+  isOperational: true,
+  message: 'Route not found: GET /api/auth/me'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Not authenticated. Please log in to access this resource.
+    at D:\Project\MERN-Ecommerce\server\src\middleware\auth.js:42:17
+    at D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:13
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\MERN-Ecommerce\server\node_modules\express\lib\router\index.js:175:3)
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Not authenticated. Please log in to access this resource.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Invalid email or password
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:96:17
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Invalid email or password'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Invalid email or password
+    at D:\Project\MERN-Ecommerce\server\src\controllers\authController.js:96:17
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 401,
+  status: 'fail',
+  isOperational: true,
+  message: 'Invalid email or password'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 1 units available in stock.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:71:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 1 units available in stock.'
+}
+STACK: undefined
+
+ORIGINAL STACK:
+Error: Only 1 units available.
+    at D:\Project\MERN-Ecommerce\server\src\controllers\cartController.js:121:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\Project\MERN-Ecommerce\server\src\utils\asyncHandler.js:4:7
+
+TYPE: object
+INSPECT: {
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Only 1 units available.'
+}
+STACK: undefined
+

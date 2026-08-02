@@ -150,7 +150,7 @@ const AdminDashboard = () => {
               {lowStockProducts.map((p) => (
                 <div key={p._id} className="py-3 flex justify-between items-center text-sm">
                   <div className="flex items-center gap-3">
-                    <img src={p.images?.[0]?.url || 'https://via.placeholder.com/50'} alt={p.name} className="w-10 h-10 object-cover rounded-lg bg-gray-100" />
+                    <img src={p.images?.[0]?.url || 'https://placehold.co/50'} alt={p.name} className="w-10 h-10 object-cover rounded-lg bg-gray-100" />
                     <div>
                       <p className="font-semibold text-gray-900 dark:text-white truncate max-w-xs">{p.name}</p>
                       <p className="text-xs text-gray-500">SKU: {p.sku || 'N/A'}</p>

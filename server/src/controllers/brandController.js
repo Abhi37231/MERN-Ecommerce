@@ -1,5 +1,5 @@
 const BrandSettings = require('../models/BrandSettings');
-const { sendSuccess, sendError } = require('../utils/responseHandler');
+const { sendSuccess } = require('../utils/apiResponse');
 
 /**
  * @desc    Get Brand Settings

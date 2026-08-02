@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Star, ShoppingBag, ShieldCheck, Truck, Clock } from 'lucide-react';
 import api from '../utils/axios';
 import toast from 'react-hot-toast';
+import SEO from '../components/common/SEO';
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -66,8 +67,26 @@ const Home = () => {
     { icon: <Clock className="w-6 h-6" />, title: '24/7 Support', desc: 'Dedicated support' },
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Craftora",
+    "url": "https://mern-ecommerce-eta-steel.vercel.app/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://mern-ecommerce-eta-steel.vercel.app/products?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <div className="bg-white dark:bg-dark-deep transition-colors duration-300">
+      <SEO 
+        title="Home"
+        description="Craftora creates premium handmade bouquets, keychains, flower pots, personalized gifts, and unique handcrafted products made with love."
+        keywords="handmade gifts, custom bouquets, keychains, personalized gifts, craftora"
+        schema={schema}
+      />
 
       {/* Hero Section */}
       <section className="relative h-[80vh] min-h-[600px] flex items-center bg-gray-50 dark:bg-gray-900 overflow-hidden">
@@ -157,19 +176,19 @@ const Home = () => {
                   {/* Back Image (Stacked Effect) */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-md transform translate-x-3 translate-y-3 rotate-3 transition-all duration-500 group-hover:translate-x-5 group-hover:translate-y-5 group-hover:rotate-6 z-0 bg-gray-200 dark:bg-gray-800">
                     <img
-                      src={category.sampleProductImage1 || category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
+                      src={category.sampleProductImage1 || category.image?.url || 'https://placehold.co/400x500?text=Category'}
                       alt={`${category.name} background`}
                       className="w-full h-full object-cover opacity-80"
-                    />
+                    loading="lazy" />
                   </div>
                   
                   {/* Front Image */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-sm z-10 bg-gray-100 dark:bg-gray-800">
                     <img
-                      src={category.sampleProductImage2 || category.image?.url || 'https://via.placeholder.com/400x500?text=Category'}
+                      src={category.sampleProductImage2 || category.image?.url || 'https://placehold.co/400x500?text=Category'}
                       alt={category.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                    loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8">
                       <h3 className="text-xl md:text-2xl font-serif text-white mb-2">{category.name}</h3>
                       <span className="text-xs uppercase tracking-widest font-medium text-primary-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center">
@@ -223,7 +242,7 @@ const Home = () => {
               src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=2130&auto=format&fit=crop"
               alt="Promo"
               className="w-full h-full object-cover opacity-40 mix-blend-overlay"
-            />
+            loading="lazy" />
           </div>
           <div className="relative z-10 px-8 py-24 md:py-32 md:px-24 flex flex-col items-center text-center max-w-3xl mx-auto">
             <span className="text-primary-200 font-serif italic tracking-wider mb-4 text-xl">Bespoke Commissions</span>
@@ -288,10 +307,10 @@ const ProductCard = ({ product }) => {
       <div className="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-800">
         <Link to={`/products/${product.slug}`}>
           <img
-            src={product.images?.[0]?.url || 'https://via.placeholder.com/400x500?text=Product'}
+            src={product.images?.[0]?.url || 'https://placehold.co/400x500?text=Product'}
             alt={product.name}
             className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-          />
+          loading="lazy" />
         </Link>
 
         {/* Badges */}

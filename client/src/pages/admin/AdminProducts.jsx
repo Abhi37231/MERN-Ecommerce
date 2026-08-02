@@ -252,7 +252,7 @@ const AdminProducts = () => {
                 filteredProducts.map((p) => (
                   <tr key={p._id} className="hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
                     <td className="p-4 flex items-center gap-3">
-                      <img src={p.images?.[0]?.url || 'https://via.placeholder.com/50'} alt={p.name} className="w-12 h-12 object-cover rounded-xl bg-gray-100" />
+                      <img src={p.images?.[0]?.url || 'https://placehold.co/50'} alt={p.name} className="w-12 h-12 object-cover rounded-xl bg-gray-100" />
                       <div>
                         <p className="font-semibold text-gray-900 dark:text-white line-clamp-1">{p.name}</p>
                         <p className="text-xs text-gray-400">SKU: {p.sku || 'N/A'}</p>
@@ -411,7 +411,7 @@ const AdminProducts = () => {
                   {restockRequests.map((req) => (
                     <div key={req._id} className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl flex items-center justify-between">
                       <div className="flex items-center gap-4">
-                        <img src={req.product?.images?.[0]?.url || 'https://via.placeholder.com/50'} className="w-12 h-12 object-cover rounded-lg" />
+                        <img src={req.product?.images?.[0]?.url || 'https://placehold.co/50'} className="w-12 h-12 object-cover rounded-lg" />
                         <div>
                           <p className="font-semibold text-gray-900 dark:text-white">{req.product?.name}</p>
                           <p className="text-xs text-gray-500">Requested by: {req.user?.firstName} {req.user?.lastName} ({req.user?.email})</p>
