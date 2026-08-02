@@ -513,7 +513,7 @@ const ProductDetail = () => {
       )}
 
       {/* Customer Reviews Section */}
-      <ProductReviews reviews={reviews} />
+      <ProductReviews reviews={reviews} totalReviews={product.ratingsQuantity || reviews.length} />
     </div>
   );
 };

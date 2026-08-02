@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Star, Image as ImageIcon } from 'lucide-react';
 
-const ProductReviews = ({ reviews, ratingSummary }) => {
+const ProductReviews = ({ reviews, totalReviews }) => {
   if (!reviews || reviews.length === 0) return null;
 
   return (
@@ -9,6 +9,7 @@ const ProductReviews = ({ reviews, ratingSummary }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center sm:text-left">
           <h2 className="text-3xl font-serif text-gray-900 dark:text-white">Customer Reviews</h2>
+          <p className="text-sm text-gray-500 mt-2 font-medium">Based on {totalReviews || reviews.length} review{totalReviews !== 1 ? 's' : ''}</p>
           <div className="w-16 h-1 bg-primary-600 mt-4 rounded sm:mx-0 mx-auto"></div>
         </div>
 
@@ -46,9 +47,9 @@ const ProductReviews = ({ reviews, ratingSummary }) => {
               </div>
 
               {review.title && (
-                <h5 className="font-bold text-gray-900 dark:text-white mb-2">{review.title}</h5>
+                <h5 className="font-bold text-gray-900 dark:text-white mb-2 break-words">{review.title}</h5>
               )}
-              <p className="text-sm text-gray-600 dark:text-gray-400 flex-1 leading-relaxed">
+              <p className="text-sm text-gray-600 dark:text-gray-400 flex-1 leading-relaxed break-words whitespace-pre-wrap overflow-hidden">
                 {review.comment}
               </p>
 
