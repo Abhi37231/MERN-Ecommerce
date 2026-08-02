@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="inline-block mb-6">
               <span className="text-2xl font-bold tracking-tight text-white">
-                Shop<span className="text-primary-500">Sphere</span>.
+                Craft<span className="text-primary-500">ora</span>.
               </span>
             </Link>
 
