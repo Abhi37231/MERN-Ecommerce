@@ -89,21 +89,21 @@ const Home = () => {
             className="max-w-xl"
           >
             <span className="inline-block py-1 px-3 border border-primary-300 text-primary-700 dark:border-primary-700 dark:text-primary-400 text-xs font-serif uppercase tracking-[0.2em] mb-6">
-              Exclusive Artisan Collection
+              Handcrafted with Love
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-gray-900 dark:text-white leading-[1.1] mb-6">
-              Curated <br />
-              <span className="text-primary-700 dark:text-primary-400 italic">Masterpieces.</span>
+              Crafted with <br />
+              <span className="text-primary-700 dark:text-primary-400 italic">Love.</span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light max-w-lg">
-              Explore our collection of premium handcrafted decor and art, designed to elevate your living spaces with timeless elegance.
+              Beautiful handmade bouquets, keychains, flower pots, gifts, and custom creations for every special occasion.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/products" className="btn btn-primary px-10 py-4 text-sm uppercase tracking-widest">
                 Shop Collection
               </Link>
               <Link to="/custom-request" className="btn btn-secondary px-10 py-4 text-sm uppercase tracking-widest bg-transparent">
-                Commission Art
+                Custom Orders
               </Link>
             </div>
           </motion.div>

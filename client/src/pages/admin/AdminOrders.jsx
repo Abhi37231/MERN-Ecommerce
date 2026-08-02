@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { 
   ShoppingCart, CheckCircle2, Clock, Truck, XCircle, Search, Filter, 
   Download, Printer, ChevronDown, ChevronUp, Package, CreditCard,
-  MessageCircle, Phone, Mail, Edit, Trash2, Calendar, User, LayoutList, RefreshCw, FileText
+  MessageCircle, Phone, Mail, Edit, Trash2, Calendar, User, LayoutList, RefreshCw, FileText, ArrowLeft, X
 } from 'lucide-react';
 import api from '../../utils/axios';
 import toast from 'react-hot-toast';
@@ -184,8 +184,8 @@ const AdminOrders = () => {
       
     itemsToExport.forEach(o => {
       const date = new Date(o.createdAt).toLocaleDateString();
-      const customer = `${o.user?.firstName || ''} ${o.user?.lastName || ''}`;
-      const email = o.user?.email || '';
+      const customer = `${o.user?.firstName || ''} ${o.user?.lastName || ''}`.trim() || o.shippingAddress?.fullName || 'Unknown';
+      const email = o.user?.email || 'N/A';
       const phone = o.shippingAddress?.phone || '';
       csvContent += `${o.orderNumber || o._id},${date},${customer},${email},${phone},${o.totalAmount},${o.payment?.method},${o.status}\n`;
     });
@@ -251,8 +251,15 @@ const AdminOrders = () => {
     printWindow.document.write('<html><head><title>Print Shipping Label</title>');
     // Include tailwind via CDN for print window styling
     printWindow.document.write('<script src="https://cdn.tailwindcss.com"></script>');
-    printWindow.document.write('<style>@media print { @page { margin: 0; } body { margin: 1cm; } }</style>');
-    printWindow.document.write('</head><body>');
+    
+    const isA4 = siteSettings?.labelSize === 'A4';
+    const isA5 = siteSettings?.labelSize === 'A5';
+    let pageSize = '100mm 150mm'; // Default 4x6
+    if (isA4) pageSize = 'A4 portrait';
+    if (isA5) pageSize = 'A5 portrait';
+
+    printWindow.document.write(`<style>@media print { @page { size: ${pageSize}; margin: 0; } body { margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; } }</style>`);
+    printWindow.document.write('</head><body class="flex justify-center bg-gray-100 print:bg-white items-start print:items-center min-h-screen p-8 print:p-0">');
     printWindow.document.write(printContent.innerHTML);
     printWindow.document.write('</body></html>');
     
@@ -436,8 +443,12 @@ const AdminOrders = () => {
                         <span className="text-gray-400">{new Date(ord.createdAt).toLocaleTimeString()}</span>
                     </td>
                     <td className="p-4">
-                      <p className="font-semibold text-gray-900 dark:text-white">{ord.user?.firstName} {ord.user?.lastName}</p>
-                      <p className="text-xs text-gray-400">{ord.user?.email}</p>
+                      <p className="font-semibold text-gray-900 dark:text-white">
+                        {(ord.user?.firstName || ord.user?.lastName) 
+                          ? `${ord.user?.firstName || ''} ${ord.user?.lastName || ''}`.trim() 
+                          : ord.shippingAddress?.fullName || 'Unknown Customer'}
+                      </p>
+                      <p className="text-xs text-gray-400">{ord.user?.email || 'No email available'}</p>
                     </td>
                     <td className="p-4">{getPaymentBadge(ord.payment)}</td>
                     <td className="p-4">
@@ -474,16 +485,24 @@ const AdminOrders = () => {
           
           {/* Drawer */}
           <div className="relative w-full max-w-xl bg-white dark:bg-gray-900 h-full shadow-2xl flex flex-col transform transition-transform duration-300">
-            {/* Drawer Header */}
-            <div className="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-800/30">
-              <div>
+            {/* Modal Header */}
+            <div className="p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col gap-4">
+              <button 
+                onClick={() => setSelectedOrder(null)} 
+                className="flex items-center text-sm font-medium text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors w-max"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Orders
+              </button>
+              <div className="flex justify-between items-start md:items-center flex-col md:flex-row gap-4">
+                <div>
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                      Order #{selectedOrder.orderNumber || selectedOrder._id.slice(-6)}
-                      {getStatusBadge(selectedOrder.status)}
+                    Order #{selectedOrder.orderNumber || selectedOrder._id.slice(-6)}
+                    {getStatusBadge(selectedOrder.status)}
                   </h2>
                   <p className="text-sm text-gray-500 mt-1">{new Date(selectedOrder.createdAt).toLocaleString()}</p>
-              </div>
-              <div className="flex items-center gap-2">
+                </div>
+                <div className="flex items-center flex-wrap gap-2">
                   <button onClick={handlePrintLabel} className="btn bg-gray-900 text-white hover:bg-gray-800 shadow-sm flex items-center justify-center gap-2 px-3 py-1.5 text-sm" title="Print Shipping Label">
                       <Printer size={16} /> Print Label
                   </button>
@@ -496,6 +515,7 @@ const AdminOrders = () => {
                   <button onClick={() => setSelectedOrder(null)} className="p-2 ml-2 text-gray-400 hover:text-red-500 transition-colors bg-white dark:bg-gray-800 rounded-full shadow-sm border border-gray-200 dark:border-gray-700">
                     <XCircle size={20} />
                   </button>
+                </div>
               </div>
             </div>
 
@@ -528,8 +548,12 @@ const AdminOrders = () => {
                         <h3 className="font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-3">
                             <User size={16} className="text-primary-500" /> Customer
                         </h3>
-                        <p className="font-semibold text-sm">{selectedOrder.user?.firstName} {selectedOrder.user?.lastName}</p>
-                        <p className="text-sm text-gray-500 mt-1">{selectedOrder.user?.email}</p>
+                        <p className="font-semibold text-sm">
+                            {(selectedOrder.user?.firstName || selectedOrder.user?.lastName) 
+                              ? `${selectedOrder.user?.firstName || ''} ${selectedOrder.user?.lastName || ''}`.trim() 
+                              : selectedOrder.shippingAddress?.fullName || 'Unknown Customer'}
+                        </p>
+                        <p className="text-sm text-gray-500 mt-1">{selectedOrder.user?.email || 'No email available'}</p>
                     </div>
                     <div className="bg-gray-50 dark:bg-gray-800/30 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
                         <div className="flex justify-between items-center mb-3">

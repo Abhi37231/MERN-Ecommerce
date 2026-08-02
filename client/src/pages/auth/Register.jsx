@@ -33,7 +33,7 @@ const Register = () => {
     <div>
       <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">Create an account</h2>
       <p className="text-gray-600 dark:text-gray-400 mb-8">
-        Join ShopSphere today for exclusive deals.
+        Join Craftora today for exclusive deals.
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">

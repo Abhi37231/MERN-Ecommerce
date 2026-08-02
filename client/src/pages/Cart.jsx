@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { Trash2, Plus, Minus, ArrowRight, ShoppingBag, Tag, Check, X } from 'lucide-react';
+import { Trash2, Plus, Minus, ArrowRight, ArrowLeft, ShoppingBag, Tag, Check, X } from 'lucide-react';
 import { updateCartItem, removeFromCart, clearCart, applyCoupon, removeCoupon } from '../redux/slices/cartSlice';
 import toast from 'react-hot-toast';
 import api from '../utils/axios';
@@ -95,6 +95,13 @@ const Cart = () => {
   return (
     <div className="bg-gray-50 dark:bg-dark-deep min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <button 
+          onClick={() => navigate(-1)} 
+          className="flex items-center text-sm font-medium text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 mb-6 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Continue Shopping
+        </button>
         <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">Shopping Cart</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

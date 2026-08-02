@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { MapPin, CreditCard, Truck, Check, ShieldCheck, ArrowRight } from 'lucide-react';
+import { MapPin, CreditCard, Truck, Check, ShieldCheck, ArrowRight, Edit2, Trash2, X } from 'lucide-react';
 import api from '../utils/axios';
 import toast from 'react-hot-toast';
 import { fetchCart, clearCartState } from '../redux/slices/cartSlice';
@@ -24,6 +24,7 @@ const Checkout = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [customerNote, setCustomerNote] = useState('');
   const [settings, setSettings] = useState(null);
+  const [editingAddressId, setEditingAddressId] = useState(null);
 
   const [newAddress, setNewAddress] = useState({
     fullName: `${user?.firstName || ''} ${user?.lastName || ''}`.trim(),
@@ -95,6 +96,57 @@ const Checkout = () => {
     setNewAddress((prev) => ({ ...prev, [name]: value }));
   };
 
+  const toggleAddressForm = () => {
+    if (!isAddingNewAddress) {
+      setNewAddress({
+        fullName: `${user?.firstName || ''} ${user?.lastName || ''}`.trim(),
+        phone: user?.phone || '',
+        addressLine1: '',
+        tal: '',
+        dist: '',
+        city: '',
+        state: '',
+        pincode: '',
+        country: 'India',
+        isDefault: true,
+      });
+      setEditingAddressId(null);
+    }
+    setIsAddingNewAddress(!isAddingNewAddress);
+  };
+
+  const handleEditAddress = (e, addr) => {
+    e.stopPropagation();
+    setNewAddress({
+      fullName: addr.fullName || '',
+      phone: addr.phone || '',
+      addressLine1: addr.addressLine1 || addr.street || '',
+      tal: addr.tal || '',
+      dist: addr.dist || '',
+      city: addr.city || '',
+      state: addr.state || '',
+      pincode: addr.pincode || '',
+      country: addr.country || 'India',
+      isDefault: addr.isDefault || false,
+    });
+    setEditingAddressId(addr._id);
+    setIsAddingNewAddress(true);
+  };
+
+  const handleDeleteAddress = async (e, id) => {
+    e.stopPropagation();
+    try {
+      await api.delete(`/users/address/${id}`);
+      setAddresses(addresses.filter((a) => a._id !== id));
+      if (selectedAddressId === id) {
+        setSelectedAddressId('');
+      }
+      toast.success('Address deleted successfully');
+    } catch (err) {
+      toast.error('Failed to delete address');
+    }
+  };
+
   const handlePlaceOrder = async () => {
     let shippingAddress = null;
 
@@ -104,8 +156,21 @@ const Checkout = () => {
         return;
       }
       try {
-        const addrRes = await api.post('/users/address', newAddress);
+        let addrRes;
+        if (editingAddressId) {
+          addrRes = await api.put(`/users/address/${editingAddressId}`, newAddress);
+        } else {
+          addrRes = await api.post('/users/address', newAddress);
+        }
         shippingAddress = addrRes.data?.data?.address || addrRes.data?.address || addrRes.address;
+        
+        // Update local list if we edited
+        if (editingAddressId && shippingAddress) {
+           setAddresses(addresses.map(a => a._id === editingAddressId ? shippingAddress : a));
+        } else if (shippingAddress) {
+           setAddresses([...addresses, shippingAddress]);
+        }
+        
       } catch (err) {
         toast.error(err.message || 'Failed to save address');
         return;
@@ -137,7 +202,7 @@ const Checkout = () => {
           key: razorpay.keyId,
           amount: razorpay.amount,
           currency: razorpay.currency,
-          name: 'ShopSphere',
+          name: 'Craftora',
           description: 'Order Payment',
           order_id: razorpay.orderId,
           handler: async function (response) {
@@ -260,7 +325,7 @@ const Checkout = () => {
                 </h2>
                 {addresses.length > 0 && (
                   <button
-                    onClick={() => setIsAddingNewAddress(!isAddingNewAddress)}
+                    onClick={toggleAddressForm}
                     className="text-sm text-primary-600 hover:underline font-medium"
                   >
                     {isAddingNewAddress ? 'Select Saved Address' : '+ Add New Address'}
@@ -288,11 +353,26 @@ const Checkout = () => {
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-gray-600 dark:text-gray-300">{addr.street}</p>
+                      <p className="text-xs text-gray-600 dark:text-gray-300">{addr.street || addr.addressLine1}</p>
                       <p className="text-xs text-gray-600 dark:text-gray-300">
                         {addr.tal && `${addr.tal}, `}{addr.dist && `${addr.dist}, `}{addr.city}, {addr.state} - {addr.pincode}
                       </p>
                       <p className="text-xs text-gray-500 mt-2">Phone: {addr.phone}</p>
+                      
+                      <div className="flex gap-2 mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <button 
+                          onClick={(e) => handleEditAddress(e, addr)}
+                          className="flex-1 flex justify-center items-center gap-1 py-1.5 text-xs font-medium text-gray-600 bg-gray-100 rounded hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
+                        >
+                          <Edit2 size={12} /> Edit
+                        </button>
+                        <button 
+                          onClick={(e) => handleDeleteAddress(e, addr._id)}
+                          className="flex-1 flex justify-center items-center gap-1 py-1.5 text-xs font-medium text-red-600 bg-red-50 rounded hover:bg-red-100 dark:bg-red-900/20 dark:text-red-400 dark:hover:bg-red-900/40 transition-colors"
+                        >
+                          <Trash2 size={12} /> Delete
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>

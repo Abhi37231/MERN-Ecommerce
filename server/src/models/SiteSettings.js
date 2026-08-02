@@ -14,7 +14,7 @@ const siteSettingsSchema = new mongoose.Schema({
   },
   storeName: {
     type: String,
-    default: 'ShopSphere'
+    default: 'Craftora'
   },
   storeAddress: {
     type: String,
@@ -26,7 +26,11 @@ const siteSettingsSchema = new mongoose.Schema({
   },
   storeEmail: {
     type: String,
-    default: 'support@shopsphere.com'
+    default: 'support@craftora.com'
+  },
+  storeWebsite: {
+    type: String,
+    default: ''
   },
   showLogo: {
     type: Boolean,
@@ -39,6 +43,14 @@ const siteSettingsSchema = new mongoose.Schema({
   showBarcode: {
     type: Boolean,
     default: true
+  },
+  showCodBox: {
+    type: Boolean,
+    default: true
+  },
+  defaultCourier: {
+    type: String,
+    default: 'Standard'
   },
   labelSize: {
     type: String,

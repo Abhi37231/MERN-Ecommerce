@@ -13,7 +13,8 @@ import {
   Menu,
   X,
   Settings,
-  ChevronLeft
+  ChevronLeft,
+  Palette
 } from 'lucide-react';
 import { logout } from '../redux/slices/authSlice';
 import toast from 'react-hot-toast';
@@ -82,6 +83,7 @@ const AdminLayout = () => {
     { path: '/admin/reviews', icon: <MessageSquare size={20} />, label: 'Reviews' },
     { path: '/admin/coupons', icon: <Ticket size={20} />, label: 'Coupons' },
     { path: '/admin/settings', icon: <Settings size={20} />, label: 'Settings' },
+    { path: '/admin/brand-settings', icon: <Palette size={20} />, label: 'Brand Settings' },
   ];
 
   return (
@@ -105,7 +107,7 @@ const AdminLayout = () => {
         <div className="h-16 flex items-center justify-between px-4 lg:px-6 border-b border-gray-200 dark:border-gray-800">
           <Link to="/" className={`flex items-center ${!isSidebarOpen && !isMobile ? 'lg:hidden' : ''}`}>
             <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Shop<span className="text-primary-600">Sphere</span>
+              Craft<span className="text-primary-600">ora</span>
               <span className="ml-2 text-xs font-normal px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full">Admin</span>
             </span>
           </Link>
@@ -113,7 +115,7 @@ const AdminLayout = () => {
           {/* Logo icon only (when collapsed on desktop) */}
           {!isSidebarOpen && !isMobile && (
             <Link to="/" className="mx-auto font-bold text-xl text-primary-600">
-              S.
+              B.
             </Link>
           )}
 

@@ -10,8 +10,11 @@ const AdminSettings = () => {
     storeAddress: '',
     storePhone: '',
     storeEmail: '',
+    storeWebsite: '',
     showLogo: true,
     showBarcode: true,
+    showCodBox: true,
+    defaultCourier: 'Standard',
     labelSize: '4x6',
     footerText: '',
     shippingCost: 50,
@@ -98,6 +101,11 @@ const AdminSettings = () => {
             </div>
 
             <div className="space-y-1">
+              <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Store Website</label>
+              <input type="url" name="storeWebsite" value={settings.storeWebsite || ''} onChange={handleChange} placeholder="https://craftora.com" className="input-field" />
+            </div>
+
+            <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Support Phone</label>
               <input type="text" name="storePhone" value={settings.storePhone} onChange={handleChange} className="input-field" />
             </div>
@@ -146,6 +154,11 @@ const AdminSettings = () => {
               </select>
             </div>
 
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Default Courier</label>
+              <input type="text" name="defaultCourier" value={settings.defaultCourier || 'Standard'} onChange={handleChange} placeholder="e.g. Delhivery, Amazon Shipping" className="input-field" />
+            </div>
+
             <div className="space-y-1 md:col-span-2">
               <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Label Footer Text</label>
               <input type="text" name="footerText" value={settings.footerText} onChange={handleChange} placeholder="Thank you for shopping with us!" className="input-field" />
@@ -165,6 +178,10 @@ const AdminSettings = () => {
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input type="checkbox" name="showBarcode" checked={settings.showBarcode} onChange={handleChange} className="w-4 h-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
                     <span className="text-sm font-medium">Show Barcode</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" name="showCodBox" checked={settings.showCodBox ?? true} onChange={handleChange} className="w-4 h-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                    <span className="text-sm font-medium">Show COD Box</span>
                   </label>
               </div>
             </div>

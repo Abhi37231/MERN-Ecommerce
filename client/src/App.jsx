@@ -45,6 +45,7 @@ const AdminReviews = lazy(() => import('./pages/admin/AdminReviews'));
 const AdminCoupons = lazy(() => import('./pages/admin/AdminCoupons'));
 const AdminSettings = lazy(() => import('./pages/admin/AdminSettings'));
 const AdminCustomRequests = lazy(() => import('./pages/admin/AdminCustomRequests'));
+const AdminBrandSettings = lazy(() => import('./pages/admin/AdminBrandSettings'));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-dark-deep">
@@ -110,6 +111,7 @@ function App() {
           <Route path="coupons" element={<AdminCoupons />} />
           <Route path="custom-requests" element={<AdminCustomRequests />} />
           <Route path="settings" element={<AdminSettings />} />
+          <Route path="brand-settings" element={<AdminBrandSettings />} />
         </Route>
       </Route>
 

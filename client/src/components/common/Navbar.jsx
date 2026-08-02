@@ -158,7 +158,7 @@ const Navbar = () => {
             {/* Logo */}
             <Link to="/" className="flex-shrink-0 flex items-center z-50">
               <span className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Shop<span className="text-primary-600 dark:text-primary-500">Sphere</span>.
+                Craft<span className="text-primary-600 dark:text-primary-500">ora</span>.
               </span>
             </Link>
 

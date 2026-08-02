@@ -71,7 +71,7 @@ const sendEmail = async ({ to, subject, html, text }) => {
   }
 
   const mailOptions = {
-    from: `"${process.env.EMAIL_FROM_NAME || 'ShopSphere'}" <${process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@shopsphere.com'}>`,
+    from: `"${process.env.EMAIL_FROM_NAME || 'Craftora'}" <${process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@craftora.com'}>`,
     to,
     subject,
     html,
@@ -93,7 +93,7 @@ const sendEmail = async ({ to, subject, html, text }) => {
 // ─── Email Template Helpers ─────────────────────────────────────────────────
 
 /**
- * HTML email template wrapper — applies ShopSphere branding.
+ * HTML email template wrapper — applies Craftora branding.
  * @param {string} content - Inner HTML content
  */
 const emailWrapper = (content) => `
@@ -102,7 +102,7 @@ const emailWrapper = (content) => `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShopSphere</title>
+  <title>Craftora</title>
   <style>
     body { margin: 0; padding: 0; background: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
     .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
@@ -120,12 +120,12 @@ const emailWrapper = (content) => `
 <body>
   <div class="container">
     <div class="header">
-      <h1>ShopSphere</h1>
-      <p>Discover. Shop. Smile.</p>
+      <h1>Craftora</h1>
+      <p>Handcrafted with Love</p>
     </div>
     <div class="body">${content}</div>
     <div class="footer">
-      <p>&copy; ${new Date().getFullYear()} ShopSphere. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} Craftora. All rights reserved.</p>
       <p>If you didn't request this email, you can safely ignore it.</p>
     </div>
 </body>
@@ -140,7 +140,7 @@ const emailWrapper = (content) => `
 const emailVerificationTemplate = (name, url) =>
   emailWrapper(`
     <h2>Verify your email, ${name}! 👋</h2>
-    <p>Welcome to ShopSphere! We're thrilled to have you on board. To get started, please verify your email address by clicking the button below.</p>
+    <p>Welcome to Craftora! We're thrilled to have you on board. To get started, please verify your email address by clicking the button below.</p>
     <a href="${url}" class="btn">Verify Email Address</a>
     <p>This link will expire in <strong>24 hours</strong>.</p>
     <p>If the button doesn't work, copy and paste this link into your browser:</p>
@@ -155,7 +155,7 @@ const emailVerificationTemplate = (name, url) =>
 const passwordResetTemplate = (name, url) =>
   emailWrapper(`
     <h2>Reset your password, ${name}</h2>
-    <p>We received a request to reset the password for your ShopSphere account. Click the button below to choose a new password.</p>
+    <p>We received a request to reset the password for your Craftora account. Click the button below to choose a new password.</p>
     <a href="${url}" class="btn">Reset Password</a>
     <p>This link will expire in <strong>10 minutes</strong>.</p>
     <p>If you didn't request a password reset, you can safely ignore this email. Your password will remain unchanged.</p>
@@ -170,7 +170,7 @@ const passwordResetTemplate = (name, url) =>
 const orderConfirmationTemplate = (name, orderId, total) =>
   emailWrapper(`
     <h2>Order Confirmed! 🎉</h2>
-    <p>Hi ${name}, thank you for shopping with ShopSphere! Your order has been placed successfully.</p>
+    <p>Hi ${name}, thank you for shopping with Craftora! Your order has been placed successfully.</p>
     <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
       <tr style="background:#f9fafb;">
         <td style="padding:12px; font-weight:600; color:#374151;">Order ID</td>

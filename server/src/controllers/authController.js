@@ -64,7 +64,7 @@ const register = asyncHandler(async (req, res, next) => {
   try {
     sendEmail({
       to: user.email,
-      subject: 'Verify your ShopSphere email',
+      subject: 'Verify your Craftora email',
       html: emailVerificationTemplate(user.firstName, verificationUrl),
     }).catch(err => console.error('Email send failed in background:', err.message));
   } catch (err) {
@@ -74,7 +74,7 @@ const register = asyncHandler(async (req, res, next) => {
   return sendAuthResponse(
     res,
     201,
-    'Account created successfully! Welcome to ShopSphere.',
+    'Account created successfully! Welcome to Craftora.',
     user
   );
 });
@@ -173,7 +173,7 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
   try {
     await sendEmail({
       to: user.email,
-      subject: 'Password Reset Request - ShopSphere',
+      subject: 'Password Reset Request - Craftora',
       html: passwordResetTemplate ? passwordResetTemplate(user.firstName, resetUrl) : `<p>Reset password: <a href="${resetUrl}">${resetUrl}</a></p>`,
     });
     return sendSuccess(res, 200, 'Password reset link sent to your email.');

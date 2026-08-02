@@ -27,7 +27,7 @@ const AuthLayout = () => {
           <div className="mb-8">
             <Link to="/" className="inline-block">
               <span className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Shop<span className="text-primary-600 dark:text-primary-500">Sphere</span>.
+                Craft<span className="text-primary-600 dark:text-primary-500">ora</span>.
               </span>
             </Link>
           </div>
@@ -49,7 +49,7 @@ const AuthLayout = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-4xl lg:text-5xl font-bold text-white mb-6"
           >
-            Discover. Shop. Smile.
+            Handcrafted with Love.
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

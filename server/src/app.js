@@ -48,6 +48,7 @@ const paymentRoutes = require('./routes/paymentRoutes');
 const customRequestRoutes = require('./routes/customRequestRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
+const brandRoutes = require('./routes/brandRoutes');
 
 const app = express();
 
@@ -148,8 +149,8 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.get('/', (req, res) => {
   res.status(200).json({
     success: true,
-    message: '🚀 Welcome to ShopSphere API',
-    tagline: 'Discover. Shop. Smile.',
+    message: '🚀 Welcome to Craftora API',
+    tagline: 'Handcrafted with Love.',
     version: '1.0.0',
     docs: `${process.env.CLIENT_URL}/api-docs`,
   });
@@ -158,7 +159,7 @@ app.get('/', (req, res) => {
 app.get('/api/v1/health', (req, res) => {
   res.status(200).json({
     success: true,
-    message: 'ShopSphere API is running',
+    message: 'Craftora API is running',
     environment: process.env.NODE_ENV,
     timestamp: new Date().toISOString(),
   });
@@ -186,6 +187,7 @@ app.use('/api/v1/payment', paymentRoutes);
 app.use('/api/v1/custom-requests', customRequestRoutes);
 app.use('/api/v1/settings', settingsRoutes);
 app.use('/api/v1/notifications', notificationRoutes);
+app.use('/api/v1/brand', brandRoutes);
 
 // ─── 12. 404 Handler (must be after all routes) ──────────────────────────────
 app.use(notFound);
